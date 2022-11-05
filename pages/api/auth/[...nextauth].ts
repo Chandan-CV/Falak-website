@@ -3,6 +3,7 @@ import GoogleProvider from "next-auth/providers/google";
 
 export const authOptions = {
   // Configure one or more authentication providers
+  secret: "Qx8Ld/zOhtfDA1iTnqYkHELe5FdLwhJ3Yy39imc2p5E=",
   providers: [
     GoogleProvider({
       clientId: process.env.GOOGLE_ID?process.env.GOOGLE_ID:"",
@@ -14,7 +15,7 @@ export const authOptions = {
           response_type: "code"
         }
       }
-    })
+    }),
   ],
 }
 
