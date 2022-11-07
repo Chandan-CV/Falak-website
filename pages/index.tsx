@@ -1,7 +1,7 @@
 import { AppBar, Button, createTheme, LinearProgress, ThemeProvider, Toolbar } from '@mui/material'
 import { signIn, signOut, useSession } from 'next-auth/react'
 import Navbar from '../components/Navbar';
-import Placard from '../components/placard';
+import Placard from '../components/Placard';
 import Tile from '../components/Tile';
 import styles from '../styles/Home.module.css'
 export default function Home() {
