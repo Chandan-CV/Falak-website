@@ -2,6 +2,7 @@ import { Button, TextField } from '@mui/material';
 import { signIn, useSession } from 'next-auth/react';
 import { useRouter } from 'next/router'
 import React, { useEffect, useState } from 'react'
+import { makePayment } from '../../RazorPay';
 
 function index() {
     const {data:session} = useSession();
@@ -26,7 +27,7 @@ function index() {
         <TextField label={"enter your email"} value={session.user?.email} disabled={true} />
         <TextField label={"enter your number"} value={phone} type="number"/>
 
-        <Button variant='contained'>
+        <Button variant='contained' onClick={makePayment}>
             Checkout and Register
         </Button>
     </div>
