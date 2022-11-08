@@ -41,10 +41,10 @@ export default function Home() {
       <p className='text-center text-5xl font-bold text-white'>Events</p>
       <div className={styles.underline2}/>
       <div className={styles.grid_container}>
-        <Tile src='https://images.pexels.com/photos/414102/pexels-photo-414102.jpeg?cs=srgb&dl=pexels-pixabay-414102.jpg&fm=jpg' name='Event Name' date='Dec 25' description='Lal Chadi Santa, raat ko bajayega ghanta' pass='platinum'/>
-        <Tile src='https://images.pexels.com/photos/414102/pexels-photo-414102.jpeg?cs=srgb&dl=pexels-pixabay-414102.jpg&fm=jpg' name='Event Name' date='Dec 25' description='Lal Chadi Santa, raat ko bajayega ghanta' pass='platinum'/>
-        <Tile src='https://images.pexels.com/photos/414102/pexels-photo-414102.jpeg?cs=srgb&dl=pexels-pixabay-414102.jpg&fm=jpg' name='Event Name' date='Dec 25' description='Lal Chadi Santa, raat ko bajayega ghanta' pass='platinum'/>
-        <Tile src='https://images.pexels.com/photos/414102/pexels-photo-414102.jpeg?cs=srgb&dl=pexels-pixabay-414102.jpg&fm=jpg' name='Event Name' date='Dec 25' description='Lal Chadi Santa, raat ko bajayega ghanta' pass='platinum'/>
+        <Tile src='https://images.pexels.com/photos/414102/pexels-photo-414102.jpeg?cs=srgb&dl=pexels-pixabay-414102.jpg&fm=jpg' name='Event Name' date='Dec 25' description='Lal Chadi Santa, raat ko bajayega ghanta' pass='Bronze'/>
+        <Tile src='https://images.pexels.com/photos/414102/pexels-photo-414102.jpeg?cs=srgb&dl=pexels-pixabay-414102.jpg&fm=jpg' name='Event Name' date='Dec 25' description='Lal Chadi Santa, raat ko bajayega ghanta' pass='Silver'/>
+        <Tile src='https://images.pexels.com/photos/414102/pexels-photo-414102.jpeg?cs=srgb&dl=pexels-pixabay-414102.jpg&fm=jpg' name='Event Name' date='Dec 25' description='Lal Chadi Santa, raat ko bajayega ghanta' pass='Gold'/>
+        <Tile src='https://images.pexels.com/photos/414102/pexels-photo-414102.jpeg?cs=srgb&dl=pexels-pixabay-414102.jpg&fm=jpg' name='Event Name' date='Dec 25' description='Lal Chadi Santa, raat ko bajayega ghanta' pass='Platinum'/>
         </div>
     </div>
   </div>
