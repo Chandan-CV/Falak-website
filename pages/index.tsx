@@ -4,6 +4,8 @@ import Navbar from '../components/Navbar';
 import Placard from '../components/Placard';
 import Tile from '../components/Tile';
 import styles from '../styles/Home.module.css'
+import LeadData from '../UtilityData/LeadData.json';
+import Events from '../UtilityData/Events.json';
 export default function Home() {
   const{data:session} = useSession();
   const theme = createTheme({
@@ -30,7 +32,7 @@ export default function Home() {
         <p className=' text-center text-5xl font-bold text-white'>About Us</p>
         <div className={styles.underline}/>
         <div className='flex flex-row items-center justify-center mt-10'>
-        <p className='flex flex-end content-center text-center text-xl text-white'>lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum </p>
+        <p className='flex flex-end content-center text-center text-xl text-white'>{(LeadData.aboutUs)}</p>
         </div>
       </div>
     </div>
@@ -41,10 +43,11 @@ export default function Home() {
       <p className='text-center text-5xl font-bold text-white'>Events</p>
       <div className={styles.underline2}/>
       <div className={styles.grid_container}>
-        <Tile src='https://images.pexels.com/photos/414102/pexels-photo-414102.jpeg?cs=srgb&dl=pexels-pixabay-414102.jpg&fm=jpg' name='Event Name' date='Dec 25' description='Lal Chadi Santa, raat ko bajayega ghanta' pass='platinum'/>
-        <Tile src='https://images.pexels.com/photos/414102/pexels-photo-414102.jpeg?cs=srgb&dl=pexels-pixabay-414102.jpg&fm=jpg' name='Event Name' date='Dec 25' description='Lal Chadi Santa, raat ko bajayega ghanta' pass='platinum'/>
-        <Tile src='https://images.pexels.com/photos/414102/pexels-photo-414102.jpeg?cs=srgb&dl=pexels-pixabay-414102.jpg&fm=jpg' name='Event Name' date='Dec 25' description='Lal Chadi Santa, raat ko bajayega ghanta' pass='platinum'/>
-        <Tile src='https://images.pexels.com/photos/414102/pexels-photo-414102.jpeg?cs=srgb&dl=pexels-pixabay-414102.jpg&fm=jpg' name='Event Name' date='Dec 25' description='Lal Chadi Santa, raat ko bajayega ghanta' pass='platinum'/>
+        {
+          Events.data.map((event)=>
+        <Tile src={event.ImageUrl} name={event.name} date={event.date} description={event.aboutEvent} pass={"platinum"}/> 
+          )
+        }
         </div>
     </div>
   </div>

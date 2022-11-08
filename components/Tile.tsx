@@ -1,16 +1,11 @@
 import React, { useState } from 'react'   
 import styles from '../styles/tiles.module.css'
-
-interface Props{
-    src: string,
-    name: string,
-    description: string,
-    date: string,
-    pass: 'bronze'|'silver'|'gold'|'platinum',
-}
+import { EventTilesProps } from '../types'
 
 
-function Tile({src,name,description,date,pass}:Props) {
+
+
+function Tile({src,name,description,date,pass}:EventTilesProps) {
     const [color,setColor]=useState('#CD7F32')
   return (
     <div className={styles.container}>

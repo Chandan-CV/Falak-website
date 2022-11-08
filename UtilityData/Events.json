@@ -1,0 +1,69 @@
+{
+    "data": [
+        {
+            "ImageUrl": "https://images.pexels.com/photos/414102/pexels-photo-414102.jpeg?cs=srgb&dl=pexels-pixabay-414102.jpg&fm=jpg",
+            "name": "Photography",
+            "aboutEvent": " Photography as an art form arose from advancements in technology which allowed photographers to manipulate their images to fit their artistic expression, being able to drastically change the outcome of an image through choosing various cameras, lenses, film, and the framing and timing of a shot. The Photography Competition is spread over two sleeves: product photography, in which the photographers use their artistic expertise to find the best shot of the product, and the same for a model in model photography.",
+            "date": "Dec 26",
+            "pass": "platinum"
+        },
+        {
+            "ImageUrl": "https://images.pexels.com/photos/414102/pexels-photo-414102.jpeg?cs=srgb&dl=pexels-pixabay-414102.jpg&fm=jpg",
+            "name": "MUN",
+            "aboutEvent": "  Crisis committees are fast-paced MUN committees that often emulate small organisations and boards. Rather than representing a country, delegates take on the role of a character that can range from an ambassador to a news reporter to a fictional character, depending on the committee. Each delegate aims to assert their character’s viewpoint and end the conference, having amassed the most social, political, or economic power.",
+            "date": "Nov 26",
+            "pass": "platinum"
+        },
+        {
+            "ImageUrl": "https://images.pexels.com/photos/414102/pexels-photo-414102.jpeg?cs=srgb&dl=pexels-pixabay-414102.jpg&fm=jpg",
+            "name": "Search Party",
+            "aboutEvent": "Students form up teams and join in 'Search Party!'s inspired by the famous Jimmy Fallon's Late Night Show, it's a Family Feud Contest, Test your Lucky Factor through some Wild Guesses, students get an opportunity to show off their wit through some general trivia, compete with different Teams and have a great time!",
+            "date": "Nov 26",
+            "pass": "platinum"
+        },
+        {
+            "ImageUrl": "https://images.pexels.com/photos/414102/pexels-photo-414102.jpeg?cs=srgb&dl=pexels-pixabay-414102.jpg&fm=jpg",
+            "name": "Marvel-DC Quiz",
+            "aboutEvent": "The Participants, being Marvel-DC Enthusiasts, compete in - The Marvel-DC Quiz, comprising of several rounds consisting of different forms of questioning and quizzing of Marvel and DC trivia, ensuring everyone has a great time altogether. ",
+            "date": "Nov 26",
+            "pass": "platinum"
+        },
+        {
+            "ImageUrl": "https://images.pexels.com/photos/414102/pexels-photo-414102.jpeg?cs=srgb&dl=pexels-pixabay-414102.jpg&fm=jpg",
+            "name": "Netflix and no chill",
+            "aboutEvent": "Was Ross actually at fault? You actually understand all Scientific Lingos spitted by Sheldon Cooper? Barney Stinson over everyone? You think you know better than us? 'Netflix and No Chill' is where the students compete in a Quiz-Format Competition, competing to crown the eventual Netflix-trivia champion!",
+            "date": "Nov 26",
+            "pass": "platinum"
+        },{
+            "ImageUrl": "https://images.pexels.com/photos/414102/pexels-photo-414102.jpeg?cs=srgb&dl=pexels-pixabay-414102.jpg&fm=jpg",
+            "name": "Animathon",
+            "aboutEvent": "An Event in which all the Otakus make themselves at Home with us at Anima-thon, where everyone discusses, enjoys and vibes along how Anime binds them all together, in a one-of-a-kind Quiz, where we put their Anime Knowledge to the test!",
+            "date": "Nov 26",
+            "pass": "platinum"
+        },{
+            "ImageUrl": "https://images.pexels.com/photos/414102/pexels-photo-414102.jpeg?cs=srgb&dl=pexels-pixabay-414102.jpg&fm=jpg",
+            "name": "GenZ",
+            "aboutEvent": "Vibe Check, Fam? Students compete in a one-of-a-kind Quiz, testing their knowledge of the newly fostered GenZ Lingo! The most W Event of them all, things are 'bout get wild!",
+            "date": "Nov 26",
+            "pass": "platinum"
+        },{
+            "ImageUrl": "https://images.pexels.com/photos/414102/pexels-photo-414102.jpeg?cs=srgb&dl=pexels-pixabay-414102.jpg&fm=jpg",
+            "name": "Dance",
+            "aboutEvent": "If we've realized something in the past 2 years, it's that our freedom to move and express ourselves is a part of our identity. Dance is one of the best media to celebrate expression, emotions and our identity, inculcating positive vibes within us and around us.\n Students compete in a multi-round Dance Competition, judged by a panel of outsourced judges, to adjudge the eventual winner, celebrating the emotions, expression and freedom with joy, rhythm and racing heartbeats the art form in itself brings along.",
+            "date": "Nov 26",
+            "pass": "platinum"
+        },{
+            "ImageUrl": "https://images.pexels.com/photos/414102/pexels-photo-414102.jpeg?cs=srgb&dl=pexels-pixabay-414102.jpg&fm=jpg",
+            "name": "Music",
+            "aboutEvent": "A Celebration of God's own Language, Voice of BLR is a Vocal Music Competition in which the Performers get their own Background Music through an Electronic Device or else play it by themselves in a multi round competition, judged by a panel of outsourced judges, to finally provide the sweetest voice of MAHE, Bengaluru the recognition they deserve!",
+            "date": "Nov 26",
+            "pass": "platinum"
+        },{
+            "ImageUrl": "https://images.pexels.com/photos/414102/pexels-photo-414102.jpeg?cs=srgb&dl=pexels-pixabay-414102.jpg&fm=jpg",
+            "name": "Drama/Skit",
+            "aboutEvent": "Participants will have to perform a skit/drama based on a set of topics/themes provided. Students are allowed to unleash their creativity on costumes, props, story, message delivery and performing in groups, with the acts being scrutinised by a panel of outsourced judges.",
+            "date": "Nov 26",
+            "pass": "platinum"
+        }
+    ]
+}
