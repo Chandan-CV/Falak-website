@@ -185,6 +185,17 @@
   box-shadow: 0 0 10px #747CE6;
   border-radius: 50px;
   margin: 20px;
+  margin-bottom: 100px;
+}
+
+.underline3{
+  width:175px;
+  height: 7px;
+  background-color: #E2642B;
+  box-shadow: 0 0 10px #E2642B;
+  border-radius: 50px;
+  margin: 20px;
+  margin-bottom: 100px;
 }
 
 .grid_container{
