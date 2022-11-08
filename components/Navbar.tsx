@@ -15,9 +15,9 @@ function Navbar() {
           <Button variant='contained' className='rounded-full'>EVENTS</Button>
           <Button variant='contained' className='rounded-full'>SCHEDULE</Button>
           {session?
-            <Button variant='contained' className='rounded-full' color='secondary' onClick={()=>{signIn()}}>sign in</Button>
+          <Button className='rounded-full' variant='contained' color='secondary' onClick={()=>{signOut()}}>sign out</Button>
           :
-            <Button className='rounded-full' variant='contained' color='secondary' onClick={()=>{signOut()}}>sign out</Button>
+          <Button variant='contained' className='rounded-full' color='secondary' onClick={()=>{signIn()}}>sign in</Button>
           }
         </div>
       </div>
