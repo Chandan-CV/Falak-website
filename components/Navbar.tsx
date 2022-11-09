@@ -8,7 +8,7 @@ function Navbar() {
     const{data:session} = useSession();
     const router = useRouter();
   return (
-    <AppBar>
+    <AppBar position='sticky'>
     <Toolbar className={styles.appbar}>
       <div className='flex flex-row justify-between items-center w-full'>
         <p>Falak 22</p>

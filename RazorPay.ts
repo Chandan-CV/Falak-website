@@ -1,3 +1,5 @@
+import { useRouter } from "next/router";
+
 const initializeRazorpay = () => {
   return new Promise((resolve) => {
     const script = document.createElement("script");
@@ -21,8 +23,7 @@ const makePayment = async (
   phone: number | undefined
 ) => {
   const res = await initializeRazorpay();
-
-  if (!res) {
+    if (!res) {
     alert("Razorpay SDK Failed to load");
     return;
   }
@@ -65,11 +66,12 @@ const makePayment = async (
           pass: passName
         }),
       });
+      window.location.replace('http://localhost:3000')
     },
     prefill: {
-      name: "Chandan",
-      email: "chandancvp08@gmail.com",
-      contact: "7676654906",
+      name: name,
+      email: email,
+      contact: phone,
     },
   };
 

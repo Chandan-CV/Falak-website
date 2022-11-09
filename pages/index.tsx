@@ -1,10 +1,17 @@
 import { AppBar, Button, createTheme, LinearProgress, ThemeProvider, Toolbar } from '@mui/material'
+import { GetServerSidePropsContext } from 'next';
 import { signIn, signOut, useSession } from 'next-auth/react'
 import Navbar from '../components/Navbar';
 import Placard from '../components/Placard';
 import Tile from '../components/Tile';
 import styles from '../styles/Home.module.css'
-export default function Home() {
+
+interface Props{
+  TilesData: any;
+  status:number;
+}
+
+export default function Home({TilesData,status}:Props) {
   const{data:session} = useSession();
   const theme = createTheme({
     palette:{
@@ -41,10 +48,10 @@ export default function Home() {
       <p className='text-center text-5xl font-bold text-white mt-10'>Events</p>
       <div className={styles.underline2}/>
       <div className={styles.grid_container}>
-        <Tile src='https://images.pexels.com/photos/414102/pexels-photo-414102.jpeg?cs=srgb&dl=pexels-pixabay-414102.jpg&fm=jpg' name='Event Name' date='Dec 25' description='Lal Chadi Santa, raat ko bajayega ghanta' pass='Bronze'/>
-        <Tile src='https://images.pexels.com/photos/414102/pexels-photo-414102.jpeg?cs=srgb&dl=pexels-pixabay-414102.jpg&fm=jpg' name='Event Name' date='Dec 25' description='Lal Chadi Santa, raat ko bajayega ghanta' pass='Silver'/>
-        <Tile src='https://images.pexels.com/photos/414102/pexels-photo-414102.jpeg?cs=srgb&dl=pexels-pixabay-414102.jpg&fm=jpg' name='Event Name' date='Dec 25' description='Lal Chadi Santa, raat ko bajayega ghanta' pass='Gold'/>
-        <Tile src='https://images.pexels.com/photos/414102/pexels-photo-414102.jpeg?cs=srgb&dl=pexels-pixabay-414102.jpg&fm=jpg' name='Event Name' date='Dec 25' description='Lal Chadi Santa, raat ko bajayega ghanta' pass='Platinum'/>
+{
+    TilesData.map((tile:any)=><Tile src='https://images.pexels.com/photos/414102/pexels-photo-414102.jpeg?cs=srgb&dl=pexels-pixabay-414102.jpg&fm=jpg' name={tile[0]} date={tile[2]} description={tile[1]} pass={tile[3]}/>
+    )
+}
       </div>
       <div>
         <div className='flex flex-col items-center'>
@@ -59,4 +66,16 @@ export default function Home() {
   </div>
   </ThemeProvider>
 )
-} 
+}
+
+export async function getServerSideProps(context: GetServerSidePropsContext) {
+    const response = await fetch('http://localhost:3000/api/getEventsTiles')
+    const responseJson = await response.json();
+    const status = response.status;
+    return{
+      props:{
+        TilesData:responseJson.data,
+        status
+      }
+    }
+}
