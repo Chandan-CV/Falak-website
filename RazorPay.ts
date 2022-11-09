@@ -20,7 +20,8 @@ const makePayment = async (
   passName: string | string[] | undefined,
   name: string | null | undefined,
   email: string | null | undefined,
-  phone: number | undefined
+  phone: number | undefined,
+  callBackFunction: ()=>void
 ) => {
   const res = await initializeRazorpay();
     if (!res) {
@@ -66,7 +67,7 @@ const makePayment = async (
           pass: passName
         }),
       });
-      window.location.replace('http://localhost:3000')
+      callBackFunction();
     },
     prefill: {
       name: name,

@@ -19,20 +19,23 @@ width: 591px;
         align-items: center;
     }
 }
-.card_br:hover {
-    transform: rotateY(180deg);
-}
 
-.card_slv:hover {
-    transform: rotateY(180deg);
-}
+@media (min-width: 400px){
+    .card_br:hover {
+        transform: rotateY(180deg);
+    }
 
-.card_gold:hover{
-    transform: rotateY(180deg);
-} 
+    .card_slv:hover {
+        transform: rotateY(180deg);
+    }
 
-.card_plat:hover{
-    transform: rotateY(180deg);
+    .card_gold:hover{
+        transform: rotateY(180deg);
+    } 
+
+    .card_plat:hover{
+        transform: rotateY(180deg);
+    }
 }
 
 .card_br{

@@ -15,6 +15,10 @@ function index({ passData, status }: Props) {
     const [name, setName] = useState(session?.user?.name);
     const [phone, setPhone] = useState<number>();
     const { id } = router.query;
+    const paymentCallBack =()=>{
+        router.replace('/');
+        alert("callback function called")
+    }
     useEffect(() => {
         if (session) {
             if (name != session.user?.name) {
@@ -34,7 +38,7 @@ function index({ passData, status }: Props) {
                     <TextField label={"enter your email"} value={session.user?.email} disabled={true} />
                     <TextField label={"enter your number"} value={phone} type="number" onChange={(e) => { setPhone(parseInt(e.target.value)) }} />
 
-                    <Button variant='contained' onClick={() => { makePayment(id,name,session.user?.email,phone) }}>
+                    <Button variant='contained' onClick={() => { makePayment(id,name,session.user?.email,phone,paymentCallBack) }}>
                         Checkout and Register
                     </Button>
                 </div>
