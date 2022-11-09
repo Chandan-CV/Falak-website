@@ -2,9 +2,9 @@
 width: 591px;
     height:341px;
     position: relative;
-    border-radius: 31px;
+    border-radius: 35px;
     margin: 1%;
-    
+    cursor: pointer;
 }
 @media(max-width:600px){
     .container{
@@ -41,8 +41,9 @@ width: 591px;
     width: 100%;
     transform-style: preserve-3d;
     transition: all 0.5s ease;
-    border-radius: 31px;
-    box-shadow: 0px 0px 10px #CD7F32;
+    border-radius: 35px;
+    border-color: #CD7F32;
+    border-width: 5px;
 }
 
 .card_slv{
@@ -51,8 +52,9 @@ width: 591px;
     width: 100%;
     transform-style: preserve-3d;
     transition: all 0.5s ease;
-    border-radius: 31px;
-    box-shadow: 0px 0px 10px #757575;
+    border-radius: 35px;
+    border-color: #757575;
+    border-width: 5px;
 }
 
 .card_gold{
@@ -61,8 +63,9 @@ width: 591px;
     width: 100%;
     transform-style: preserve-3d;
     transition: all 0.5s ease;
-    border-radius: 31px;
-    box-shadow: 0px 0px 10px #ffd700;
+    border-radius: 35px;
+    border-color: #ffd700;
+    border-width: 5px;
 }
 
 .card_plat{
@@ -71,8 +74,9 @@ width: 591px;
     width: 100%;
     transform-style: preserve-3d;
     transition: all 0.5s ease;
-    border-radius: 31px;
-    box-shadow: 0px 0px 10px #E5E4E2;
+    border-radius: 35px;
+    border-color: #E5E4E2;
+    border-width: 5px;
 }
 
 .front{
@@ -118,7 +122,7 @@ width: 591px;
 }
 
 .star_prop{
-    text-shadow: 0 0 10px #CD7F32;
+    text-shadow: 0 3px 10px #CD7F32;
 }
 
 .underline{
@@ -128,7 +132,6 @@ width: 591px;
     box-shadow: 0 0 10px #74E6AF;
     border-radius: 50px;
     margin: 10px;
-    margin-left: 35px;
   }
   
 .br{
@@ -136,13 +139,13 @@ width: 591px;
 }
   
 .slv{
-    color: #CD7F32;
+    color: #757575;
 }
   
 .gold{
-    color: #CD7F32;
+    color: #ffd700;
 }
   
 .plat{
-    color: #CD7F32;
+    color: #E5E4E2;
 }
