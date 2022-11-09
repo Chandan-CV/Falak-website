@@ -30,15 +30,18 @@ function index({ passData, status }: Props) {
         if (status == 200) {
 
             return (
-                <div style={{ display: "flex", flexDirection: "column", padding: 10, }}>
+                <div style={{ display: "flex", flexDirection: "column", padding: 10,  backgroundColor: '#00002C',height: '100vh', alignItems:'center'}}>
                     <p>{id} registration page</p>
                     <p>{JSON.stringify(passData)}</p>
                     <p>{id}</p>
-                    <TextField label={"enter your name"} value={name} onChange={(e) => { setName(e.target.value) }} />
-                    <TextField label={"enter your email"} value={session.user?.email} disabled={true} />
-                    <TextField label={"enter your number"} value={phone} type="number" onChange={(e) => { setPhone(parseInt(e.target.value)) }} />
+                    <p className='text-white text-[20px]'>Name:</p>
+                    <TextField className='bg-white m-5' value={name} onChange={(e) => { setName(e.target.value) }} />
+                    <p className='text-white text-[20px]'>Email:</p>
+                    <TextField className='bg-white m-5' value={session.user?.email} disabled={true} />
+                    <p className='text-white text-[20px]'>Phone Number:</p>
+                    <TextField className='bg-white m-5' value={phone} type="number" onChange={(e) => { setPhone(parseInt(e.target.value)) }} />
 
-                    <Button variant='contained' onClick={() => { makePayment(id,name,session.user?.email,phone,paymentCallBack) }}>
+                    <Button className='bg-blue-900 w-[300px]' variant='contained' onClick={() => { makePayment(id,name,session.user?.email,phone,paymentCallBack) }}>
                         Checkout and Register
                     </Button>
                 </div>
