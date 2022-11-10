@@ -1,9 +1,6 @@
 import NextAuth from "next-auth"
 import GoogleProvider from "next-auth/providers/google";
 
-interface callBackProps{
-  
-}
 export const authOptions = {
   // Configure one or more authentication providers
     providers: [
