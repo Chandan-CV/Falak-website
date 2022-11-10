@@ -1,11 +1,9 @@
 import { Button, TextField } from '@mui/material';
-import { collection, getDocs, onSnapshot, query, where } from 'firebase/firestore';
 import { GetServerSidePropsContext } from 'next';
 import { getSession, signIn, useSession } from 'next-auth/react';
 import { useRouter } from 'next/router'
 import React, { useEffect, useState } from 'react'
-import { db } from '../../FirebaseConfig';
-import { makePayment } from '../../RazorPay';
+import { makePayment } from '../../components/Razorpay';
 import { EventData } from '../../types';
 interface Props {
     passData: EventData;
@@ -67,7 +65,7 @@ function index({ passData, status, userData,  }: Props) {
         )
     }
 }
-
+    
 export async function getServerSideProps(context: GetServerSidePropsContext) {
    const session = await getSession(context)
     const { id } = context.query;
