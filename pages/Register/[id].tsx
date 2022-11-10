@@ -3,12 +3,8 @@ import { GetServerSidePropsContext } from 'next';
 import { getSession, signIn, useSession } from 'next-auth/react';
 import { useRouter } from 'next/router'
 import React, { useEffect, useState } from 'react'
-<<<<<<< HEAD
 import { makePayment } from '../../components/Razorpay';
-=======
 import Navbar from '../../components/Navbar';
-import { makePayment } from '../../RazorPay';
->>>>>>> cleanUpAndEvents
 import { EventData } from '../../types';
 interface Props {
     passData: EventData;
@@ -58,16 +54,16 @@ function index({ passData, status, userData,  }: Props) {
                     </div>
                 </div>
                 <div className='flex'>
-                    <Button className='rounded-3xl bg-[#CD7F32] m-2 text-gray-700' variant='outlined' onClick={() => {}}>
+                    <Button className={ id=='bronze'?'rounded-3xl bg-[#CD7F32] m-2 text-gray-700 font-extrabold':'rounded-3xl bg-blue-500 m-2 text-gray-700'} variant='outlined' onClick={() => {router.push('/Register/bronze')}}>
                         Bronze
                     </Button>
-                    <Button className='rounded-3xl bg-[#757575] m-2 text-gray-700' variant='outlined' onClick={() => {}}>
+                    <Button className={id=='silver'? 'rounded-3xl bg-[#757575] m-2 text-gray-700 font-extrabold':'rounded-3xl bg-blue-500 m-2 text-gray-700'} variant='outlined' onClick={() => {router.push('/Register/silver')}}>
                         Silver
                     </Button>
-                    <Button className='rounded-3xl bg-[#ffd700] m-2 text-gray-700' variant='outlined' onClick={() => {}}>
+                    <Button className={id=='gold'? 'rounded-3xl bg-[#ffd700] m-2 text-gray-700 font-extrabold border border-solid':'rounded-3xl bg-blue-500 m-2 text-gray-700'} variant='outlined' onClick={() => {router.push('/Register/gold')}}>
                         Gold
                     </Button>
-                    <Button className='rounded-3xl bg-[#E5E4E2] m-2 text-gray-700' variant='outlined' onClick={() => {}}>
+                    <Button className={id=='platinum'?'rounded-3xl bg-[#E5E4E2] m-2 text-gray-700 font-extrabold':'rounded-3xl bg-blue-500 m-2 text-gray-700'} variant='outlined' onClick={() => {router.push('/Register/platinum')}}>
                         Platinum
                     </Button>
                 </div>
