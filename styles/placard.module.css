@@ -1,0 +1,25 @@
+.container{
+    height: 400px;
+    width: 300px;
+    border-radius: 43px;
+    border-color: #747CE6;
+    border-width: 5px;
+    display: flex;
+    flex-direction: column-reverse;
+    box-shadow: 0 0 20px #000000;
+}
+
+.year1{
+    border-radius:50px;
+    color: #fafafa;
+    background-color: #EEB940;
+    padding: 5px;
+    width: 125px;
+}
+.year2{
+    border-radius:50px;
+    color: #fafafa;
+    background-color: #E2642B;
+    padding: 5px;
+    width: 125px;
+}
