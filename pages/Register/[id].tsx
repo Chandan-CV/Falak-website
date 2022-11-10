@@ -41,7 +41,7 @@ function Index({ passData, status, userData,  }: Props) {
                     <div className='flex flex-col mt-6 m-2'>
                         <p className='text-white ml-5 m-1'>Name</p>
                         <div className='bg-[#747CE6] rounded-3xl border-white border-2'>
-                            <TextField className='bg-[#747CE6] mx-5 h-10 text-white' size='small' value={name} onChange={(e) => { setName(e.target.value) }} />
+                            <TextField className='bg-[#747CE6] mx-5 h-10 text-white rounded-[100px]' size='small' value={name} onChange={(e) => { setName(e.target.value) }} />
                         </div>
                     </div>
                 </div>
@@ -49,7 +49,7 @@ function Index({ passData, status, userData,  }: Props) {
                     <div className='flex flex-col m-2'>
                         <p className='text-white ml-5 m-1'>Email</p>
                         <div className='bg-[#747CE6] rounded-3xl border-white border-2'>
-                            <TextField className='bg-[#747CE6] mx-5 h-10 text-white' size='small' value={session.user?.email} disabled={true}/>
+                            <TextField className='bg-[#747CE6] mx-5 h-10 text-white rounded-[100px]' size='small' value={session.user?.email} disabled={true}/>
                         </div>
                     </div>
                 </div>
@@ -71,7 +71,7 @@ function Index({ passData, status, userData,  }: Props) {
                     <div className='flex flex-col m-2'>
                         <p className='text-white ml-5 m-1'>Phone Number</p>
                         <div className='bg-[#747CE6] rounded-3xl border-white border-2'>
-                            <TextField className='bg-[#747CE6] mx-5 h-10 text-white' size='small' value={phone} type="number" onChange={(e) => { setPhone(parseInt(e.target.value)) }}  />
+                            <TextField className='bg-[#747CE6] mx-5 h-10 text-white rounded-[100px]' size='small' value={phone} type="number" onChange={(e) => { setPhone(parseInt(e.target.value)) }}  />
                         </div>
                     </div>
                 </div>
