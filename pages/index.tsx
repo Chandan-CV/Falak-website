@@ -80,10 +80,10 @@ Falak is a celebration of a sense of belonging, a palace where participants from
 
 export async function getServerSideProps(context: GetServerSidePropsContext) {
   const session = await getSession(context)
-    const response = await fetch('http://localhost:3000/api/getEventsTiles')
+    const response = await fetch(`${process.env.BASE_URL}/api/getEventsTiles`)
     const responseJson = await response.json();
     const status = response.status;
-    const userDataRaw = await fetch(`http://localhost:3000/api/getUserData?email=${session?.user?.email}`)
+    const userDataRaw = await fetch(`${process.env.BASE_URL}/api/getUserData?email=${session?.user?.email}`)
     const userData = await userDataRaw.json()
     const userDataStatus = userDataRaw.status;
     return{

@@ -67,7 +67,7 @@ function EventPage({data,status}:Props) {
 
 export async function getServerSideProps(context: GetServerSidePropsContext){
   const eventName = context.query.id;
-  const response = await fetch(`http://localhost:3000/api/getEventData?eventName=${eventName}`)
+  const response = await fetch(`${process.env.BASE_URL}/api/getEventData?eventName=${eventName}`)
   const responseJson = await response.json();
   const status = response.status;
 return{
