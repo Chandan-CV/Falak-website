@@ -159,10 +159,10 @@
 }
 
 .underline{
-  width:125px;
+  width:175px;
   height: 7px;
-  background-color: #EEB940;
-  box-shadow: 0 0 10px #EEB940;
+  background-color: #DEAC39;
+  box-shadow: 0 0 10px #DEAC39;
   border-radius: 50px;
   margin: 20px;
 }

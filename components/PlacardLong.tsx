@@ -4,7 +4,7 @@ import {faPhone,faEnvelope} from '@fortawesome/free-solid-svg-icons'
 interface Props{
     name:string,
     src:string,
-    contact: string,
+    contact: number,
     email: string,
 }
 
