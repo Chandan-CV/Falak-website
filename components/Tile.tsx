@@ -16,8 +16,9 @@ interface Props{
 function Tile({src,name,description,date,pass}:Props) {
     const [color,setColor]=useState('#CD7F32')
     const router = useRouter();
+    const routeName = name.toLocaleLowerCase().replaceAll(" ","").replaceAll("-","");
   return (
-    <div className={styles.container} onClick={()=>{router.push(`/events/${name.toLowerCase().replaceAll(" ","")}`)}}>
+    <div className={styles.container} onClick={()=>{router.push(`/events/${routeName}`)}}>
         <div className={(pass=='Silver')? styles.card_slv:(pass=='Gold')? styles.card_gold:(pass=='Platinum')? styles.card_plat:styles.card_br}>
             <div className={styles.front}>
                 <img className={'opacity-50 w-full h-full rounded-[31px]'} src={src}/>

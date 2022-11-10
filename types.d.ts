@@ -9,9 +9,15 @@ export interface EventPageData{
     description:string;
     pass: "Silver"|"Gold"|"Platinum"|"Bronze";
     image:string;
-    cordinators: string;
+    coordinators:CoordinatorsData[] ;
 }
 
+export interface CoordinatorsData{
+    name:string;
+    phone:number;
+    email: string;
+    image:string;
+}
 export interface Tile{
     name:string;
     description:string;
