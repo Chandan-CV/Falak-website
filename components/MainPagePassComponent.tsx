@@ -5,8 +5,8 @@ import { json } from 'stream/consumers'
 function MainPagePassComponent({userData}:any) {
  
   const qrCodeData = {
-    pass: userData.pass,
     name:userData.name,
+    pass: userData.pass,
     email: userData.email,
   }
   return (
