@@ -1,6 +1,7 @@
 import { AppBar, Button, createTheme, LinearProgress, ThemeProvider, Toolbar } from '@mui/material'
 import { GetServerSidePropsContext } from 'next';
 import { getSession, signIn, signOut, useSession } from 'next-auth/react'
+import MainPagePassComponent from '../components/MainPagePassComponent';
 import Navbar from '../components/Navbar';
 import Placard from '../components/Placard';
 import Tile from '../components/Tile';
@@ -34,6 +35,7 @@ export default function Home({TilesData,status,userData, userDataStatus}:Props) 
     <div className={styles.logo_bg}>
       <img src=''/>
     </div>
+      <MainPagePassComponent userData={userData}/>
     <div className="flex justify-center items-center">
       <div className={styles.about_us}>
         <p className=' text-center text-5xl font-bold text-white'>About Us</p>
