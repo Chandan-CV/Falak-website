@@ -66,7 +66,10 @@ const makePayment = async (
           pass: passName
         }),
       });
-      window.location.replace('http://localhost:3000')
+      const registerUserData = await registerUser.json();
+      const registerUserStatus = registerUser.status;
+      alert(registerUserStatus)
+      alert(registerUserData)
     },
     prefill: {
       name: name,

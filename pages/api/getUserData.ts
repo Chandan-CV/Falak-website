@@ -1,17 +1,21 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { db } from "../../FirebaseConfig";
-import { collection, addDoc, getDoc, getDocs, DocumentData, SnapshotOptions, doc } from "firebase/firestore";
+import { collection, addDoc, getDoc, getDocs, DocumentData, SnapshotOptions, doc, query, where } from "firebase/firestore";
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-var data: ((options?: SnapshotOptions | undefined) => DocumentData)[] = [];
-const docRef = doc(db, "Users", "6DhXaJDq08qzRzbub2rC");
-const docSnap = await getDoc(docRef);
-if (docSnap.exists()) {
-    console.log("Document data:", docSnap.data());
-    res.send(docSnap.data())
-  } else {
-    // doc.data() will be undefined in this case
-    console.log("No such document!");
-    res.send("oops something went wrong")
-  }
+const email = req.query.email;
+const q = query(collection(db,'Users'),where('email','==',email))
+const querySnapshot = await getDocs(q);
+var data:any=[];
+console.log("this is actually working yo")
+querySnapshot.forEach((doc)=>{
+  console.log(doc.data())
+  data.push(doc.data())
+})
+if(data.length>0){
+  res.status(200).json(data[0])
+}
+else{
+  res.status(400).json({message:"oops document not found"})
+}
 }

@@ -1,6 +1,6 @@
 import { AppBar, Button, createTheme, LinearProgress, ThemeProvider, Toolbar } from '@mui/material'
 import { GetServerSidePropsContext } from 'next';
-import { signIn, signOut, useSession } from 'next-auth/react'
+import { getSession, signIn, signOut, useSession } from 'next-auth/react'
 import Navbar from '../components/Navbar';
 import Placard from '../components/Placard';
 import Tile from '../components/Tile';
@@ -9,9 +9,11 @@ import styles from '../styles/Home.module.css'
 interface Props{
   TilesData: any;
   status:number;
+  userData:any;
+  userDataStatus: number;
 }
 
-export default function Home({TilesData,status}:Props) {
+export default function Home({TilesData,status,userData, userDataStatus}:Props) {
   const{data:session} = useSession();
   const theme = createTheme({
     palette:{
@@ -69,13 +71,19 @@ export default function Home({TilesData,status}:Props) {
 }
 
 export async function getServerSideProps(context: GetServerSidePropsContext) {
+  const session = await getSession(context)
     const response = await fetch('http://localhost:3000/api/getEventsTiles')
     const responseJson = await response.json();
     const status = response.status;
+    const userDataRaw = await fetch(`http://localhost:3000/api/getUserData?email=${session?.user?.email}`)
+    const userData = await userDataRaw.json()
+    const userDataStatus = userDataRaw.status;
     return{
       props:{
         TilesData:responseJson.data,
-        status
+        status,
+        userData,
+        userDataStatus
       }
     }
 }
