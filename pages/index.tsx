@@ -1,6 +1,7 @@
 import { AppBar, Button, createTheme, LinearProgress, ThemeProvider, Toolbar } from '@mui/material'
 import { GetServerSidePropsContext } from 'next';
 import { getSession, signIn, signOut, useSession } from 'next-auth/react'
+import { title } from 'process';
 import MainPagePassComponent from '../components/MainPagePassComponent';
 import Navbar from '../components/Navbar';
 import Placard from '../components/Placard';
@@ -59,7 +60,7 @@ Falak is a celebration of a sense of belonging, a palace where participants from
       <div className={styles.underline2}/>
       <div className={styles.grid_container}>
 {
-    TilesData.map((tile:any)=><Tile src='https://images.pexels.com/photos/414102/pexels-photo-414102.jpeg?cs=srgb&dl=pexels-pixabay-414102.jpg&fm=jpg' name={tile[0]} date={tile[2]} description={tile[1]} pass={tile[3]}/>
+    TilesData.map((tile:any)=><Tile src='https://images.pexels.com/photos/414102/pexels-photo-414102.jpeg?cs=srgb&dl=pexels-pixabay-414102.jpg&fm=jpg' name={tile[0]} date={tile[2]} description={tile[1]} pass={tile[3]} key={title[0]}/>
     )
 }
       </div>

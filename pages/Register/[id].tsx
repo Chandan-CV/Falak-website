@@ -12,7 +12,7 @@ interface Props {
     userData: any;
     
 }
-function index({ passData, status, userData,  }: Props) {
+function Index({ passData, status, userData,  }: Props) {
     const { data: session } = useSession();
     const router = useRouter();
     const [name, setName] = useState(session?.user?.name);
@@ -114,4 +114,4 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
     }
 }
 
-export default index
+export default Index
