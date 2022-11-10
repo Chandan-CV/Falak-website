@@ -1,4 +1,5 @@
-import { useRouter } from "next/router";
+import Router from 'next/router'
+
 
 const initializeRazorpay = () => {
   return new Promise((resolve) => {
@@ -21,10 +22,10 @@ const makePayment = async (
   name: string | null | undefined,
   email: string | null | undefined,
   phone: number | undefined,
-  callBackFunction: ()=>void
+  callBackFunction: () => void
 ) => {
   const res = await initializeRazorpay();
-    if (!res) {
+  if (!res) {
     alert("Razorpay SDK Failed to load");
     return;
   }
@@ -48,9 +49,6 @@ const makePayment = async (
       razorpay_signature: any;
     }) {
       // Validate payment at server - using webhooks is a better idea.
-      alert(response.razorpay_payment_id);
-      alert(response.razorpay_order_id);
-      alert(response.razorpay_signature);
       const registerUser = await fetch("/api/RegisterUser", {
         method: "POST",
         headers: {
@@ -64,13 +62,10 @@ const makePayment = async (
           paymentID: response.razorpay_payment_id,
           orderID: response.razorpay_order_id,
           signature: response.razorpay_signature,
-          pass: passName
+          pass: passName,
         }),
       });
-      const registerUserData = await registerUser.json();
-      const registerUserStatus = registerUser.status;
-      alert(registerUserStatus)
-      alert(registerUserData)
+      Router.push('/')
     },
     prefill: {
       name: name,
@@ -79,8 +74,9 @@ const makePayment = async (
     },
   };
 
-  const paymentObject = new window.Razorpay(options);
+  const paymentObject = new (window as any).Razorpay(options);
   paymentObject.open();
 };
 
-export { initializeRazorpay, makePayment };
+
+export { makePayment };
