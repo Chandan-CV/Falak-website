@@ -158,6 +158,21 @@
   flex-direction: column;
 }
 
+.video{
+  width: 80%;
+  height: 100%;
+}
+
+@media (max-width: 600px){
+  .about_us{
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .video{
+    width: 100%;  
+  }
+}
 .underline{
   width:175px;
   height: 7px;

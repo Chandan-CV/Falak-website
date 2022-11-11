@@ -37,11 +37,20 @@ export default function Home({TilesData,status,userData, userDataStatus}:Props) 
     <div className={styles.logo_bg}>
       <img src=''/>
     </div>
+    
     {
       session?
       <MainPagePassComponent userData={userData} userDataStatus={userDataStatus}/>
 :null
     }
+    <div className='flex w-full justify-center items-center text-white font-bold min-[600px]:hidden'>
+      
+    {session?
+          <button className={'bg-[#6C72D9] rounded-full p-2 m-2 px-5 border-2 box-border hover:opacity-60'} onClick={()=>{signOut()}}>SIGN OUT</button>
+          :
+          <button className={'bg-[#6C72D9] rounded-full p-2 px-5 m-2 border-2 box-border hover:opacity-60'} onClick={()=>{signIn()}}>SIGN IN</button>
+        }
+        </div>
     <div className="flex justify-center items-center">
       <div className={styles.about_us}>
         <p className=' text-center text-5xl font-bold text-white'>About Us</p>
@@ -57,7 +66,9 @@ Falak is a celebration of a sense of belonging, a palace where participants from
       </div>
     </div>
     <div className='flex justify-center p-20'>
-      <video className=' bg-slate-600 w-10/12 rounded'></video>
+    <iframe width={800} height={450}
+      src="https://www.youtube.com/embed/tgbNymZ7vqY">
+    </iframe>
     </div>
     <div className={styles.events}  id="eventstag">
       <p className='text-center text-5xl font-bold text-white mt-10'>Events</p>
