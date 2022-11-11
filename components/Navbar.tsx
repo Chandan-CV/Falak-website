@@ -1,4 +1,4 @@
-import { AppBar, Button, Toolbar } from '@mui/material'
+import { AppBar, Toolbar } from '@mui/material'
 import { signIn, signOut, useSession } from 'next-auth/react';
 import { useRouter } from 'next/router';
 import React from 'react'
@@ -13,13 +13,15 @@ function Navbar() {
       <div className='flex flex-row justify-between items-center w-full'>
         <p>Falak 22</p>
         <div className={styles.appBarShit}>
-          <Button variant='contained' className='rounded-full' onClick={()=>{router.replace('/')}}>HOME</Button>
-          <Button variant='contained' className='rounded-full'>EVENTS</Button>
-          <Button variant='contained' className='rounded-full'>SCHEDULE</Button>
+          <button className={'bg-[#6C72D9] rounded-full m-2 p-2 px-5 border-2 box-border hover:opacity-60'} onClick={()=>{router.replace('/')}}>HOME</button>
+          <button className={'bg-[#6C72D9] rounded-full m-2 p-2 px-5 border-2 box-border hover:opacity-60'} onClick={()=>{
+            router.replace('/#eventstag');
+        }}>EVENTS</button>
+          <button className={'bg-[#6C72D9] rounded-full p-2 m-2 px-5 border-2 box-border hover:opacity-60'} onClick={()=>{router.replace('/')}}>SCHEDULE</button>
           {session?
-          <Button className='rounded-full' variant='contained' color='secondary' onClick={()=>{signOut()}}>sign out</Button>
+          <button className={'bg-[#6C72D9] rounded-full p-2 m-2 px-5 border-2 box-border hover:opacity-60'} onClick={()=>{signOut()}}>SIGN OUT</button>
           :
-          <Button variant='contained' className='rounded-full' color='secondary' onClick={()=>{signIn()}}>sign in</Button>
+          <button className={'bg-[#6C72D9] rounded-full p-2 px-5 m-2 border-2 box-border hover:opacity-60'} onClick={()=>{signIn()}}>SIGN IN</button>
           }
         </div>
       </div>

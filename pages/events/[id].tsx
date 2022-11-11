@@ -49,16 +49,14 @@ function EventPage({data,status}:Props) {
           <p className='text-2xl mt-10 w-[75vw]'>{data.description}</p>
         </div>
         <div className='w-full flex justify-center'>
-          <Button className='w-[30vw] h-[10vh] rounded-[50px] text-3xl m-32 bg-[#6C72D9] p-3 px-5' variant='contained' onClick={()=>{router.push(`/Register/${data.pass.toLowerCase().replace(" ","")}`)}}>
-            Register Now!
-          </Button>
+        <button className={'w-[30vw] h-[10vh] rounded-[50px] text-3xl m-32 bg-[#6C72D9] p-3 px-5 text-white hover:opacity-60'} onClick={()=>{router.push(`/Register/${data.pass.toLowerCase().replace(" ","")}`)}}>REGISTER NOW!</button>
         </div>
         <div className='flex min-w-full text-center justify-center items-center flex-col'>
           <p className='text-5xl text-white font-bold'>Event Managers</p>
           <div className={styles.underline3}/>
         </div>
-        <div className='flex flex-wrap'>
-        {data.coordinators.map((e)=> <PlacardLong contact={e.phone} email={e.email} name={e.name} src={e.image} key={e.email}/>)}
+        <div className='flex flex-wrap justify-center'>
+        {data.coordinators.map((e)=> <PlacardLong contact={e.phone} email={e.email} name={e.name} src={e.image}/>)}
         </div>
     </div>
 </ThemeProvider>
