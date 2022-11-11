@@ -37,7 +37,11 @@ export default function Home({TilesData,status,userData, userDataStatus}:Props) 
     <div className={styles.logo_bg}>
       <img src=''/>
     </div>
-      <MainPagePassComponent userData={userData}/>
+    {
+      session?
+      <MainPagePassComponent userData={userData} userDataStatus={userDataStatus}/>
+:null
+    }
     <div className="flex justify-center items-center">
       <div className={styles.about_us}>
         <p className=' text-center text-5xl font-bold text-white'>About Us</p>

@@ -7,7 +7,6 @@ const email = req.query.email;
 const q = query(collection(db,'Users'),where('email','==',email))
 const querySnapshot = await getDocs(q);
 var data:any=[];
-console.log("this is actually working yo")
 querySnapshot.forEach((doc)=>{
   console.log(doc.data())
   data.push(doc.data())
