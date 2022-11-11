@@ -50,11 +50,11 @@ function index({ passData, status }: Props) {
                         </div>
                     </div>
                 </div>
-                <div className='flex'>
+                <div className='flex flex-wrap justify-center mt-3'>
                 <button className={'rounded-3xl bg-[#CD7F32] m-2 text-gray-700 p-2 px-5 hover:opacity-60'} onClick={()=>{router.push('/Register/bronze')}}>BRONZE</button>
                 <button className={'rounded-3xl bg-[#757575] m-2 text-gray-700 p-2 px-5 hover:opacity-60'} onClick={()=>{router.push('/Register/silver')}}>SILVER</button>
-                <button className={'rounded-3xl bg-[#ffd700] m-2 text-gray-700 p-2 px-5 hover:opacity-60'} onClick={()=>{}}>GOLD</button>
-                <button className={'rounded-3xl bg-[#E5E4E2] m-2 text-gray-700 p-2 px-5 hover:opacity-60'} onClick={()=>{}}>PLATINUM</button>
+                <button className={'rounded-3xl bg-[#ffd700] m-2 text-gray-700 p-2 px-5 hover:opacity-60'} onClick={()=>{router.push('/Register/gold')}}>GOLD</button>
+                <button className={'rounded-3xl bg-[#E5E4E2] m-2 text-gray-700 p-2 px-5 hover:opacity-60'} onClick={()=>{router.push('/Register/platinum')}}>PLATINUM</button>
                 </div>
                 <div>
                     <div className='flex flex-col m-2'>
@@ -64,6 +64,10 @@ function index({ passData, status }: Props) {
                         </div>
                     </div>
                 </div>
+                    <div className='text-white'>
+                        <p>
+                            Pass Selected: {id} ~ {passData.fee} INR</p>
+                    </div>
                     <button className={'rounded-3xl bg-blue-500 m-20 p-2 px-5 text-white hover:opacity-60 '} onClick={()=>{makePayment(id,name,session.user?.email,phone,paymentCallBack)}}>Register</button>
                 </div>
             )
@@ -89,7 +93,7 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
     const jsonData = await data.json();
     const status = await data.status;
     return {
-        props: { passData: jsonData, status }
+        props: { passData: jsonData.data, status }
     }
 }
 
