@@ -75,7 +75,7 @@ Falak is a celebration of a sense of belonging, a palace where participants from
 }
 
 export async function getServerSideProps(context: GetServerSidePropsContext) {
-    const response = await fetch('http://localhost:3000/api/getEventsTiles')
+    const response = await fetch(`http://localhost:3000/api/getEventsTiles`)
     const responseJson = await response.json();
     const status = response.status;
     return{

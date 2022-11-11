@@ -37,44 +37,34 @@ function index({ passData, status }: Props) {
                 <div>
                     <div className='flex flex-col mt-6 m-2'>
                         <p className='text-white ml-5 m-1'>Name</p>
-                        <div className='bg-[#747CE6] rounded-3xl border-white border-2'>
-                            <TextField className='bg-[#747CE6] mx-5 h-10 text-white' size='small' value={name} onChange={(e) => { setName(e.target.value) }} />
+                        <div className='bg-[#747CE6] rounded-3xl border-white border-2 px-5'>
+                            <TextField className='bg-[#747CE6] h-10 text-white' size='small' value={name} onChange={(e) => { setName(e.target.value) }} />
                         </div>
                     </div>
                 </div>
                 <div>
                     <div className='flex flex-col m-2'>
                         <p className='text-white ml-5 m-1'>Email</p>
-                        <div className='bg-[#747CE6] rounded-3xl border-white border-2'>
-                            <TextField className='bg-[#747CE6] mx-5 h-10 text-white' size='small' value={session.user?.email} disabled={true}/>
+                        <div className='bg-[#747CE6] rounded-3xl border-white border-2 px-5'>
+                            <TextField className='bg-[#747CE6] h-10 text-white' size='small' value={session.user?.email} disabled={true}/>
                         </div>
                     </div>
                 </div>
                 <div className='flex'>
-                    <Button className='rounded-3xl bg-[#CD7F32] m-2 text-gray-700' variant='outlined' onClick={() => {}}>
-                        Bronze
-                    </Button>
-                    <Button className='rounded-3xl bg-[#757575] m-2 text-gray-700' variant='outlined' onClick={() => {}}>
-                        Silver
-                    </Button>
-                    <Button className='rounded-3xl bg-[#ffd700] m-2 text-gray-700' variant='outlined' onClick={() => {}}>
-                        Gold
-                    </Button>
-                    <Button className='rounded-3xl bg-[#E5E4E2] m-2 text-gray-700' variant='outlined' onClick={() => {}}>
-                        Platinum
-                    </Button>
+                <button className={'rounded-3xl bg-[#CD7F32] m-2 text-gray-700 p-2 px-5 hover:opacity-60'} onClick={()=>{router.push('/Register/bronze')}}>BRONZE</button>
+                <button className={'rounded-3xl bg-[#757575] m-2 text-gray-700 p-2 px-5 hover:opacity-60'} onClick={()=>{router.push('/Register/silver')}}>SILVER</button>
+                <button className={'rounded-3xl bg-[#ffd700] m-2 text-gray-700 p-2 px-5 hover:opacity-60'} onClick={()=>{}}>GOLD</button>
+                <button className={'rounded-3xl bg-[#E5E4E2] m-2 text-gray-700 p-2 px-5 hover:opacity-60'} onClick={()=>{}}>PLATINUM</button>
                 </div>
                 <div>
                     <div className='flex flex-col m-2'>
                         <p className='text-white ml-5 m-1'>Phone Number</p>
-                        <div className='bg-[#747CE6] rounded-3xl border-white border-2'>
-                            <TextField className='bg-[#747CE6] mx-5 h-10 text-white' size='small' value={phone} type="number" onChange={(e) => { setPhone(parseInt(e.target.value)) }}  />
+                        <div className='bg-[#747CE6] rounded-3xl border-white border-2 px-5'>
+                            <TextField className='bg-[#747CE6] h-10 text-white' size='small' value={phone} type="number" onChange={(e) => { setPhone(parseInt(e.target.value)) }}  />
                         </div>
                     </div>
                 </div>
-                    <Button className='rounded-3xl bg-blue-500 m-20' variant='contained' onClick={() => { makePayment(id,name,session.user?.email,phone,paymentCallBack) }}>
-                        Register
-                    </Button>
+                    <button className={'rounded-3xl bg-blue-500 m-20 p-2 px-5 text-white hover:opacity-60 '} onClick={()=>{makePayment(id,name,session.user?.email,phone,paymentCallBack)}}>Register</button>
                 </div>
             )
         } else {
