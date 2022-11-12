@@ -8,7 +8,9 @@ import Placard from '../components/Placard';
 import PlacardLong from '../components/PlacardLong';
 import Tile from '../components/Tile';
 import styles from '../styles/Home.module.css'
+import Logo from '../assets/Logo.jpeg';
 import { OurTeam } from '../types';
+import Image from 'next/image';
 
 interface Props{
   TilesData: any;
@@ -37,7 +39,7 @@ export default function Home({TilesData,status,userData, userDataStatus, team}:P
   <div className={styles.container}>
    <Navbar/>
     <div className={styles.logo_bg}>
-      <img src=''/>
+      <Image src={Logo} alt={''} height={500}/>
     </div>
     
     {
@@ -90,7 +92,7 @@ Falak is a celebration of a sense of belonging, a palace where participants from
         {
           team.map((member)=>{
 
-            return <Placard name={member.name} src={member.imageURL} year={member.year} pos={member.position}/>
+            return <Placard name={member.name} src={member.imageURL} year={member.year} pos={member.position} key={member.name}/>
           })
         }
       </div>

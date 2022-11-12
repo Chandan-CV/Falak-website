@@ -7,7 +7,7 @@ interface Props{
   schedule:string,
   scheduleStatus: number
 }
-function schedule({schedule, scheduleStatus}:Props) {
+function Schedule({schedule, scheduleStatus}:Props) {
 
   const {width,height} = useWindowDimensions();
 
@@ -41,4 +41,4 @@ export async function getServerSideProps(context:GetServerSidePropsContext) {
   }
 }
 
-export default schedule
+export default Schedule
