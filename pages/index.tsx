@@ -8,15 +8,19 @@ import Placard from '../components/Placard';
 import PlacardLong from '../components/PlacardLong';
 import Tile from '../components/Tile';
 import styles from '../styles/Home.module.css'
+import Logo from '../assets/Logo.jpeg';
+import { OurTeam } from '../types';
+import Image from 'next/image';
 
 interface Props{
   TilesData: any;
   status:number;
   userData:any;
   userDataStatus: number;
+  team:OurTeam[];
 }
 
-export default function Home({TilesData,status,userData, userDataStatus}:Props) {
+export default function Home({TilesData,status,userData, userDataStatus, team}:Props) {
   const{data:session} = useSession();
   const theme = createTheme({
     palette:{
@@ -35,9 +39,22 @@ export default function Home({TilesData,status,userData, userDataStatus}:Props) 
   <div className={styles.container}>
    <Navbar/>
     <div className={styles.logo_bg}>
-      <img src=''/>
+      <Image src={Logo} alt={''} height={500}/>
     </div>
-      <MainPagePassComponent userData={userData}/>
+    
+    {
+      session?
+      <MainPagePassComponent userData={userData} userDataStatus={userDataStatus}/>
+:null
+    }
+    <div className='flex w-full justify-center items-center text-white font-bold min-[600px]:hidden'>
+      
+    {session?
+          <button className={'bg-[#6C72D9] rounded-full p-2 m-2 px-5 border-2 box-border hover:opacity-60'} onClick={()=>{signOut()}}>SIGN OUT</button>
+          :
+          <button className={'bg-[#6C72D9] rounded-full p-2 px-5 m-2 border-2 box-border hover:opacity-60'} onClick={()=>{signIn()}}>SIGN IN</button>
+        }
+        </div>
     <div className="flex justify-center items-center">
       <div className={styles.about_us}>
         <p className=' text-center text-5xl font-bold text-white'>About Us</p>
@@ -53,14 +70,16 @@ Falak is a celebration of a sense of belonging, a palace where participants from
       </div>
     </div>
     <div className='flex justify-center p-20'>
-      <video className=' bg-slate-600 w-10/12 rounded'></video>
+    <iframe width={800} height={450}
+      src="https://www.youtube.com/embed/tgbNymZ7vqY">
+    </iframe>
     </div>
-    <div className={styles.events}>
+    <div className={styles.events}  id="eventstag">
       <p className='text-center text-5xl font-bold text-white mt-10'>Events</p>
       <div className={styles.underline2}/>
       <div className={styles.grid_container}>
 {
-    TilesData.map((tile:any)=><Tile src='https://images.pexels.com/photos/414102/pexels-photo-414102.jpeg?cs=srgb&dl=pexels-pixabay-414102.jpg&fm=jpg' name={tile[0]} date={tile[2]} description={tile[1]} pass={tile[3]} key={title[0]}/>
+    TilesData.map((tile:any)=><Tile src={tile[4]} name={tile[0]} date={tile[2]} description={tile[1]} pass={tile[3]} key={title[0]}/>
     )
 }
       </div>
@@ -70,7 +89,12 @@ Falak is a celebration of a sense of belonging, a palace where participants from
       <div className={styles.underline3}/>
         </div>
       <div className={styles.grid_container}>
-        <Placard name='Chandu' src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8cmFuZG9tJTIwcGVyc29ufGVufDB8fDB8fA%3D%3D&w=1000&q=80' year='1' pos='Senior Developer'/>
+        {
+          team.map((member)=>{
+
+            return <Placard name={member.name} src={member.imageURL} year={member.year} pos={member.position} key={member.name}/>
+          })
+        }
       </div>
       </div>
     </div>
@@ -87,12 +111,16 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
     const userDataRaw = await fetch(`${process.env.BASE_URL}/api/getUserData?email=${session?.user?.email}`)
     const userData = await userDataRaw.json()
     const userDataStatus = userDataRaw.status;
+    const teamRaw = await fetch(`${process.env.BASE_URL}/api/getTeam`)
+    const teamJson = await teamRaw.json();
+    const team = teamJson.team
     return{
       props:{
         TilesData:responseJson.data,
         status,
         userData,
-        userDataStatus
+        userDataStatus,
+        team
       }
     }
 }

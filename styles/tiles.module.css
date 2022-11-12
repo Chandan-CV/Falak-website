@@ -8,12 +8,15 @@
 }
 @media(max-width:600px){
     .container{
-        width:400px
+        width:400px;
+        height: 225px;
     }
 }
 @media (max-width: 400px){
     .container{
+        margin-top: 15px;
         width: 300px;
+        height: 170px;
         display: flex;
         justify-content: center;
         align-items: center;

@@ -2,7 +2,11 @@ import React from 'react'
 import QRCode from 'react-qr-code'
 import { json } from 'stream/consumers'
 
-function MainPagePassComponent({userData}:any) {
+interface Props{
+  userData: any;
+  userDataStatus:number;
+}
+function MainPagePassComponent({userData, userDataStatus}:Props) {
  
   const qrCodeData = {
     name:userData.name,
@@ -16,12 +20,12 @@ function MainPagePassComponent({userData}:any) {
       </p>
       <div className='p-5'>
       {
-        Object.values(qrCodeData).length!=0?
+        userDataStatus==200?
         <QRCode
         value={JSON.stringify(qrCodeData)}
         bgColor="#292929"
         fgColor='#FAFAFA'
-        />:<p>no pass yet</p>
+        />:<p className='text-white'>no pass yet</p>
       }
     
     </div>

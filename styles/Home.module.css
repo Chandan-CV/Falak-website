@@ -138,6 +138,11 @@
   width: 100%;
   height: 737px;
   background: linear-gradient(to right,#000000,#3B3786);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  object-fit:  cover;
+
 }
 
 .about_us{
@@ -158,6 +163,21 @@
   flex-direction: column;
 }
 
+.video{
+  width: 80%;
+  height: 100%;
+}
+
+@media (max-width: 600px){
+  .about_us{
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .video{
+    width: 100%;  
+  }
+}
 .underline{
   width:175px;
   height: 7px;
