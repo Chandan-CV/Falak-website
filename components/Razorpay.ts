@@ -41,7 +41,6 @@ const makePayment = async (
     currency: data.currency,
     amount: data.amount,
     order_id: data.id,
-    description: "Thankyou for your test donation",
     image: "https://manuarora.in/logo.png",
     handler: async function (response: {
       razorpay_payment_id: any;
