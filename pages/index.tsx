@@ -8,15 +8,17 @@ import Placard from '../components/Placard';
 import PlacardLong from '../components/PlacardLong';
 import Tile from '../components/Tile';
 import styles from '../styles/Home.module.css'
+import { OurTeam } from '../types';
 
 interface Props{
   TilesData: any;
   status:number;
   userData:any;
   userDataStatus: number;
+  team:OurTeam[];
 }
 
-export default function Home({TilesData,status,userData, userDataStatus}:Props) {
+export default function Home({TilesData,status,userData, userDataStatus, team}:Props) {
   const{data:session} = useSession();
   const theme = createTheme({
     palette:{
@@ -75,7 +77,7 @@ Falak is a celebration of a sense of belonging, a palace where participants from
       <div className={styles.underline2}/>
       <div className={styles.grid_container}>
 {
-    TilesData.map((tile:any)=><Tile src='https://images.pexels.com/photos/414102/pexels-photo-414102.jpeg?cs=srgb&dl=pexels-pixabay-414102.jpg&fm=jpg' name={tile[0]} date={tile[2]} description={tile[1]} pass={tile[3]} key={title[0]}/>
+    TilesData.map((tile:any)=><Tile src={tile[4]} name={tile[0]} date={tile[2]} description={tile[1]} pass={tile[3]} key={title[0]}/>
     )
 }
       </div>
@@ -85,7 +87,12 @@ Falak is a celebration of a sense of belonging, a palace where participants from
       <div className={styles.underline3}/>
         </div>
       <div className={styles.grid_container}>
-        <Placard name='Chandu' src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8cmFuZG9tJTIwcGVyc29ufGVufDB8fDB8fA%3D%3D&w=1000&q=80' year='1' pos='Senior Developer'/>
+        {
+          team.map((member)=>{
+
+            return <Placard name={member.name} src={member.imageURL} year={member.year} pos={member.position}/>
+          })
+        }
       </div>
       </div>
     </div>
@@ -102,12 +109,16 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
     const userDataRaw = await fetch(`${process.env.BASE_URL}/api/getUserData?email=${session?.user?.email}`)
     const userData = await userDataRaw.json()
     const userDataStatus = userDataRaw.status;
+    const teamRaw = await fetch(`${process.env.BASE_URL}/api/getTeam`)
+    const teamJson = await teamRaw.json();
+    const team = teamJson.team
     return{
       props:{
         TilesData:responseJson.data,
         status,
         userData,
-        userDataStatus
+        userDataStatus,
+        team
       }
     }
 }

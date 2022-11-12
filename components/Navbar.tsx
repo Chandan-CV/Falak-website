@@ -17,7 +17,7 @@ function Navbar() {
           <button className={'bg-[#6C72D9] rounded-full m-2 p-2 px-5 border-2 box-border hover:opacity-60'} onClick={()=>{
             router.replace('/#eventstag');
         }}>EVENTS</button>
-          <button className={'bg-[#6C72D9] rounded-full p-2 m-2 px-5 border-2 box-border hover:opacity-60'} onClick={()=>{router.replace('/')}}>SCHEDULE</button>
+          <button className={'bg-[#6C72D9] rounded-full p-2 m-2 px-5 border-2 box-border hover:opacity-60'} onClick={()=>{router.replace('/schedule')}}>SCHEDULE</button>
           {session?
           <button className={'bg-[#6C72D9] rounded-full p-2 m-2 px-5 border-2 box-border hover:opacity-60'} onClick={()=>{signOut()}}>SIGN OUT</button>
           :
