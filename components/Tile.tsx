@@ -9,7 +9,7 @@ interface Props{
     name: string,
     description: string,
     date: string,
-    pass: 'Bronze'|'Silver'|'Gold'|'Platinum',
+    pass: 'None'|'Bronze'|'Silver'|'Gold'|'Platinum',
 }
 
 
@@ -22,7 +22,7 @@ function Tile({src,name,description,date,pass}:Props) {
   
     return (
     <div className={styles.container} onClick={()=>{router.push(`/events/${routeName}`)}}>
-        <div className={(pass=='Silver')? styles.card_slv:(pass=='Gold')? styles.card_gold:(pass=='Platinum')? styles.card_plat:styles.card_br}>
+        <div className={(pass=='Silver')? styles.card_slv:(pass=='Gold')? styles.card_gold:(pass=='Platinum')? styles.card_plat:(pass=='Bronze')? styles.card_br:styles.card_none}>
             <div className={styles.front}>
                 <img className={'w-full h-full rounded-[31px] blur-sm'} src={src}/>
                 <p className={styles.frontName}>{name}</p>
@@ -33,10 +33,14 @@ function Tile({src,name,description,date,pass}:Props) {
                         {name}
                         <div className={styles.underline}/>
                     </div>
-                    <div className={styles.event_Prop +" "+ ((pass=='Silver')? styles.slv:(pass=='Gold')? styles.gold:(pass=='Platinum')? styles.plat:styles.br)}>
+                    {
+                        pass!='None'?
+                        <div className={styles.event_Prop +" "+ ((pass=='Silver')? styles.slv:(pass=='Gold')? styles.gold:(pass=='Platinum')? styles.plat:styles.br)}>
                         <FontAwesomeIcon icon={faStar}/>  
                         <p className='m-2'>{pass} Event</p>
-                    </div>
+                        </div>:null
+                    }
+                    
                 </div>
                 <div className='m-2 text-white text-lg'>
                     {description}

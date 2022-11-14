@@ -39,6 +39,9 @@
     .card_plat:hover{
         transform: rotateY(180deg);
     }
+    .card_none:hover{
+        transform: rotateY(180deg);
+    }
 }
 
 .card_br{
@@ -83,6 +86,14 @@
     border-radius: 35px;
     border-color: #E5E4E2;
     border-width: 5px;
+}
+.card_none{
+    position:absolute;
+    height:100%;
+    width: 100%;
+    transform-style: preserve-3d;
+    transition: all 0.5s ease;
+    border-radius: 35px;
 }
 
 .front{
