@@ -52,7 +52,7 @@ function EventPage({data,status}:Props) {
           }
         </div>
         <div className='w-full flex justify-center'>
-        <button className={'w-[30vw] h-[10vh] rounded-[50px] text-3xl m-32 bg-[#6C72D9] p-3 px-5 text-white hover:opacity-60'} onClick={()=>{router.push(`/Register/${data.pass.toLowerCase().replace(" ","")}`)}}>REGISTER NOW!</button>
+        <button className={'w-[30vw] h-[10vh] rounded-[50px] text-3xl m-32 bg-[#6C72D9] p-3 px-5 text-white hover:opacity-60 max-sm:text-xl max-sm:w-[60vw]'} onClick={()=>{router.push(`/Register/${data.pass.toLowerCase().replace(" ","")}`)}}>REGISTER NOW!</button>
         </div>
         <div className='flex min-w-full text-center justify-center items-center flex-col'>
           <p className='text-5xl text-white font-bold'>Event Managers</p>
