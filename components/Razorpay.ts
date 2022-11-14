@@ -46,7 +46,7 @@ alert("please enter your mobile number")
       currency: data.currency,
     amount: data.amount,
     order_id: data.id,
-    image: "https://manuarora.in/logo.png",
+    image: "https://firebasestorage.googleapis.com/v0/b/falak-28f37.appspot.com/o/My%20project-1%20(1).png?alt=media&token=7031dccd-000d-4641-bd8c-35cf32fe4701",
     handler: async function (response: {
       razorpay_payment_id: any;
       razorpay_order_id: any;
