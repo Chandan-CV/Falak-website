@@ -26,3 +26,10 @@ export interface Tile{
     date: string;
     imageUrl:string;
 }
+
+export interface OurTeam{
+    name:string;
+    year: "1"|"2";
+    position:string;
+    imageURL:string;
+}

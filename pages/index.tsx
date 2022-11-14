@@ -8,15 +8,19 @@ import Placard from '../components/Placard';
 import PlacardLong from '../components/PlacardLong';
 import Tile from '../components/Tile';
 import styles from '../styles/Home.module.css'
+import Logo from '../assets/Logo.jpeg';
+import { OurTeam } from '../types';
+import Image from 'next/image';
 
 interface Props{
   TilesData: any;
   status:number;
   userData:any;
   userDataStatus: number;
+  team:OurTeam[];
 }
 
-export default function Home({TilesData,status,userData, userDataStatus}:Props) {
+export default function Home({TilesData,status,userData, userDataStatus, team}:Props) {
   const{data:session} = useSession();
   const theme = createTheme({
     palette:{
@@ -35,7 +39,11 @@ export default function Home({TilesData,status,userData, userDataStatus}:Props) 
   <div className={styles.container}>
    <Navbar/>
     <div className={styles.logo_bg}>
+<<<<<<< HEAD
       <img className='ml-8 w-[100vw] ' src='https://firebasestorage.googleapis.com/v0/b/falak-28f37.appspot.com/o/falaklogo.png?alt=media&token=83f83582-69c7-4a23-a276-76a2d0aeb60c'/>
+=======
+      <Image src={Logo} alt={''} height={500}/>
+>>>>>>> 8f8a9bf2aae63010273152a0e333226df39f9f14
     </div>
     
     {
@@ -85,7 +93,12 @@ Falak is a celebration of a sense of belonging, a palace where participants from
       <div className={styles.underline3}/>
         </div>
       <div className={styles.grid_container}>
-        <Placard name='Chandu' src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8cmFuZG9tJTIwcGVyc29ufGVufDB8fDB8fA%3D%3D&w=1000&q=80' year='1' pos='Senior Developer'/>
+        {
+          team.map((member)=>{
+
+            return <Placard name={member.name} src={member.imageURL} year={member.year} pos={member.position} key={member.name}/>
+          })
+        }
       </div>
       </div>
     </div>
@@ -102,12 +115,16 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
     const userDataRaw = await fetch(`${process.env.BASE_URL}/api/getUserData?email=${session?.user?.email}`)
     const userData = await userDataRaw.json()
     const userDataStatus = userDataRaw.status;
+    const teamRaw = await fetch(`${process.env.BASE_URL}/api/getTeam`)
+    const teamJson = await teamRaw.json();
+    const team = teamJson.team
     return{
       props:{
         TilesData:responseJson.data,
         status,
         userData,
-        userDataStatus
+        userDataStatus,
+        team
       }
     }
 }
