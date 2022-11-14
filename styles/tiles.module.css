@@ -23,7 +23,7 @@
     }
 }
 
-@media (min-width: 400px){
+@media (min-width:600px){
     .card_br:hover {
         transform: rotateY(180deg);
     }
@@ -116,6 +116,12 @@
     font-size: 350%;
     font-weight: bold;
     text-align: center;
+}
+@media (max-width:600px){
+    .frontName{
+        font-size: x-large;
+    }
+    
 }
 
 .event_Prop{
