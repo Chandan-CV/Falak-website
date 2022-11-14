@@ -39,14 +39,17 @@ function EventPage({data,status}:Props) {
           <p className='text-white text-6xl font-medium'>{data.name}</p>
         </div>
         <div className='w-full p-10 flex justify-center items-center'>
-        <img
+        <img className='w-[682px]'
         src={data.image}
         />
         </div>
-        <div className='flex p-10 text-white flex-col text-center justify-center items-center'>
+        <div className='flex p-10 text-white flex-col justify-center items-center'>
           <p className='text-5xl font-semibold'>Event Description</p>
           <div className={styles.underline}/>
-          <p className='text-2xl mt-10 w-[75vw]'>{data.description}</p>
+          {
+            data.description.map((e)=> <p className='text-2xl mt-10 w-[75vw] whitespace-pre-line'>{e}</p>
+            )
+          }
         </div>
         <div className='w-full flex justify-center'>
         <button className={'w-[30vw] h-[10vh] rounded-[50px] text-3xl m-32 bg-[#6C72D9] p-3 px-5 text-white hover:opacity-60'} onClick={()=>{router.push(`/Register/${data.pass.toLowerCase().replace(" ","")}`)}}>REGISTER NOW!</button>

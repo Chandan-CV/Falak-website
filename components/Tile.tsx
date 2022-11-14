@@ -21,7 +21,7 @@ function Tile({src,name,description,date,pass}:Props) {
     <div className={styles.container} onClick={()=>{router.push(`/events/${routeName}`)}}>
         <div className={(pass=='Silver')? styles.card_slv:(pass=='Gold')? styles.card_gold:(pass=='Platinum')? styles.card_plat:styles.card_br}>
             <div className={styles.front}>
-                <img className={'opacity-50 w-full h-full rounded-[31px]'} src={src}/>
+                <img className={'w-full h-full rounded-[31px] blur-sm'} src={src}/>
                 <p className={styles.frontName}>{name}</p>
             </div>
             <div className={styles.back}>
@@ -37,9 +37,6 @@ function Tile({src,name,description,date,pass}:Props) {
                 </div>
                 <div className='m-2 text-white text-lg'>
                     {description}
-                </div>
-                <div className='m-2'>
-                    {date}
                 </div>
             </div>
         </div>

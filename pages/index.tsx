@@ -35,7 +35,7 @@ export default function Home({TilesData,status,userData, userDataStatus}:Props) 
   <div className={styles.container}>
    <Navbar/>
     <div className={styles.logo_bg}>
-      <img src=''/>
+      <img className='ml-8 w-[100vw] ' src='https://firebasestorage.googleapis.com/v0/b/falak-28f37.appspot.com/o/falaklogo.png?alt=media&token=83f83582-69c7-4a23-a276-76a2d0aeb60c'/>
     </div>
     
     {
@@ -75,7 +75,7 @@ Falak is a celebration of a sense of belonging, a palace where participants from
       <div className={styles.underline2}/>
       <div className={styles.grid_container}>
 {
-    TilesData.map((tile:any)=><Tile src='https://images.pexels.com/photos/414102/pexels-photo-414102.jpeg?cs=srgb&dl=pexels-pixabay-414102.jpg&fm=jpg' name={tile[0]} date={tile[2]} description={tile[1]} pass={tile[3]} key={title[0]}/>
+    TilesData.map((tile:any)=><Tile src={tile[4]} name={tile[0]} date={tile[2]} description={tile[1]} pass={tile[3]} key={title[0]}/>
     )
 }
       </div>

@@ -6,7 +6,7 @@ export interface EventData{
 
 export interface EventPageData{
     name:string;
-    description:string;
+    description:string[];
     pass: "Silver"|"Gold"|"Platinum"|"Bronze";
     image:string;
     coordinators:CoordinatorsData[] ;
