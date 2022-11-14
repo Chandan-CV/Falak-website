@@ -6,6 +6,7 @@ import Navbar from '../../components/Navbar';
 import PlacardLong from '../../components/PlacardLong';
 import { EventPageData } from '../../types';
 import styles from '../../styles/Home.module.css'
+import Head from 'next/head';
 interface Props{
   data: EventPageData;
   status:number;
@@ -32,7 +33,11 @@ function EventPage({data,status}:Props) {
     const { id } = router.query;
   return (
     <ThemeProvider theme={theme}>
-
+     <Head>
+                        <title>
+                            Falak 2022 {data.name}
+                        </title>
+                    </Head>
     <div className='bg-[rgb(0,0,44)] min-w-full min-h-screen'>
         <Navbar/>
         <div className='w-full p-10 flex justify-center items-center'>

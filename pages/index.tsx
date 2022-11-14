@@ -11,6 +11,7 @@ import styles from '../styles/Home.module.css'
 import Logo from '../assets/Logo.png';
 import { OurTeam } from '../types';
 import Image from 'next/image';
+import Head from 'next/head';
 
 interface Props{
   TilesData: any;
@@ -35,7 +36,11 @@ export default function Home({TilesData,status,userData, userDataStatus, team}:P
   })
   return(
   <ThemeProvider theme={theme}>
-
+<Head>
+  <title>
+    Falak 2022
+  </title>
+</Head>
   <div className={styles.container}>
    <Navbar/>
     <div className={styles.logo_bg}>
