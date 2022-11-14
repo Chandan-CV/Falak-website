@@ -68,15 +68,15 @@ function PriceFields() {
     // )
     return(
         
-<div className='overflow-scroll p-10 w-full scrollbar-hide'>
+<div className='overflow-scroll p-7 scrollbar-hide bg-[#6C72D9] rounded-lg w-3/4 m-10'>
     <Table className='text-white' title='lolz'>
 
         <TableHead>
           <TableRow>
-            <TableCell className='text-white font-extrabold text-2xl'>Features</TableCell>
-            <TableCell align="center" className='text-white font-extrabold text-2xl'>Bronze</TableCell>
-            <TableCell align="center" className='text-white font-extrabold text-2xl'>Silver</TableCell>
-            <TableCell align="center" className='text-white font-extrabold text-2xl'>Gold</TableCell>
+            <TableCell sx={{color:"white", fontSize:24, fontWeight:"bold"}}> Features</TableCell>
+            <TableCell align="center"sx={{color:"white", fontSize:24, fontWeight:"bold"}} >Bronze</TableCell>
+            <TableCell align="center" sx={{color:"white", fontSize:24, fontWeight:"bold"}} >Silver</TableCell>
+            <TableCell align="center" sx={{color:"white", fontSize:24, fontWeight:"bold"}} >Gold</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -84,7 +84,7 @@ function PriceFields() {
         <TableRow
               sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
               >
-              <TableCell component="th" scope="row" className='text-white text-xl'>
+              <TableCell component="th" scope="row" sx={{color:"white", fontSize:20, fontWeight:"light"}}>
                 All other events
               </TableCell>
               <TableCell align="center">
@@ -102,7 +102,7 @@ function PriceFields() {
             <TableRow
               sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
               >
-              <TableCell component="th" scope="row" className='text-white text-xl'>
+              <TableCell component="th" scope="row" sx={{color:"white", fontSize:20, fontWeight:"light"}} >
                 Music and dance events
               </TableCell>
               <TableCell align="center">
@@ -120,7 +120,7 @@ function PriceFields() {
             <TableRow
               sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
               >
-              <TableCell component="th" scope="row" className='text-white text-xl'>
+              <TableCell component="th" scope="row" sx={{color:"white", fontSize:20, fontWeight:"light"}}>
               Standup and Concert
               </TableCell>
               <TableCell align="center">
