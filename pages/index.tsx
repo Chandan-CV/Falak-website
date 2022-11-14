@@ -39,11 +39,7 @@ export default function Home({TilesData,status,userData, userDataStatus, team}:P
   <div className={styles.container}>
    <Navbar/>
     <div className={styles.logo_bg}>
-<<<<<<< HEAD
-      <img className='ml-8 w-[100vw] ' src='https://firebasestorage.googleapis.com/v0/b/falak-28f37.appspot.com/o/falaklogo.png?alt=media&token=83f83582-69c7-4a23-a276-76a2d0aeb60c'/>
-=======
       <Image src={Logo} alt={''} height={500}/>
->>>>>>> 8f8a9bf2aae63010273152a0e333226df39f9f14
     </div>
     
     {
