@@ -47,7 +47,7 @@ function EventPage({data,status}:Props) {
           <p className='text-5xl font-semibold'>Event Description</p>
           <div className={styles.underline}/>
           {
-            data.description.map((e)=> <p className='text-2xl mt-10 w-[75vw] whitespace-pre-line'>{e}</p>
+            data.description.map((e,index)=> <p className='text-2xl mt-10 w-[75vw] whitespace-pre-line' key={index}>{e}</p>
             )
           }
         </div>
