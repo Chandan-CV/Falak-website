@@ -8,7 +8,7 @@ import Placard from '../components/Placard';
 import PlacardLong from '../components/PlacardLong';
 import Tile from '../components/Tile';
 import styles from '../styles/Home.module.css'
-import Logo from '../assets/Logo.jpeg';
+import Logo from '../assets/Logo.png';
 import { OurTeam } from '../types';
 import Image from 'next/image';
 
@@ -39,7 +39,7 @@ export default function Home({TilesData,status,userData, userDataStatus, team}:P
   <div className={styles.container}>
    <Navbar/>
     <div className={styles.logo_bg}>
-      <Image src={Logo} alt={''} height={500}/>
+      <Image src={Logo} alt={''} height={730}/>
     </div>
     
     {
