@@ -1,11 +1,10 @@
-import { AppBar, Button, createTheme, LinearProgress, ThemeProvider, Toolbar } from '@mui/material'
+import { createTheme, LinearProgress, ThemeProvider} from '@mui/material'
 import { GetServerSidePropsContext } from 'next';
 import { getSession, signIn, signOut, useSession } from 'next-auth/react'
 import { title } from 'process';
 import MainPagePassComponent from '../components/MainPagePassComponent';
 import Navbar from '../components/Navbar';
 import Placard from '../components/Placard';
-import PlacardLong from '../components/PlacardLong';
 import Tile from '../components/Tile';
 import styles from '../styles/Home.module.css'
 import Logo from '../assets/Logo.png';
@@ -18,7 +17,7 @@ interface Props{
   status:number;
   userData:any;
   userDataStatus: number;
-  team:OurTeam[];
+  team:OurTeam;
 }
 
 export default function Home({TilesData,status,userData, userDataStatus, team}:Props) {
@@ -93,11 +92,17 @@ Falak is a celebration of a sense of belonging, a palace where participants from
       <p className=' text-5xl font-bold text-white mt-36'>Meet The Team</p>
       <div className={styles.underline3}/>
         </div>
+        <div className={styles.grid_container}>
+        {
+          team[1].map((member)=>{
+            return <Placard name={member.name} src={member.image} pos={member.position} key={member.name}/>
+          })
+        }
+      </div>  
       <div className={styles.grid_container}>
         {
-          team.map((member)=>{
-
-            return <Placard name={member.name} src={member.imageURL} year={member.year} pos={member.position} key={member.name}/>
+          team[2].map((member)=>{
+            return <Placard name={member.name} src={member.image} pos={member.position} key={member.name}/>
           })
         }
       </div>
@@ -116,7 +121,7 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
     const userDataRaw = await fetch(`${process.env.BASE_URL}/api/getUserData?email=${session?.user?.email}`)
     const userData = await userDataRaw.json()
     const userDataStatus = userDataRaw.status;
-    const teamRaw = await fetch(`${process.env.BASE_URL}/api/getTeam`)
+    const teamRaw = await fetch(`${process.env.BASE_URL}/api/getNewTeam`)
     const teamJson = await teamRaw.json();
     const team = teamJson.team
     return{
