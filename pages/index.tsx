@@ -90,7 +90,7 @@ Falak is a celebration of a sense of belonging, a palace where participants from
       </div>
       <div>
         <div className='flex flex-col items-center'>
-      <p className=' text-5xl font-bold text-white mt-36'>The Team</p>
+      <p className=' text-5xl font-bold text-white mt-36'>Meet The Team</p>
       <div className={styles.underline3}/>
         </div>
       <div className={styles.grid_container}>
