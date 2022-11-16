@@ -42,7 +42,7 @@ function Index({ passData, status, userData,  }: Props) {
                     <div className='flex flex-col mt-6 m-2'>
                         <p className='text-white ml-5 m-1'>Name</p>
                         <div className='bg-[#747CE6] rounded-3xl border-white border-2 px-5'>
-                            <TextField className='bg-[#747CE6] h-10 text-white' size='small' value={name} onChange={(e) => { setName(e.target.value) }} />
+                            <input className='bg-[#747CE6] w-60 h-10 outline-none font-semibold text-white' value={name?.toString()} onChange={(e)=>{setName(e.target.value)}}/>
                         </div>
                     </div>
                 </div>
@@ -50,7 +50,7 @@ function Index({ passData, status, userData,  }: Props) {
                     <div className='flex flex-col m-2'>
                         <p className='text-white ml-5 m-1'>Email</p>
                         <div className='bg-[#747CE6] rounded-3xl border-white border-2 px-5'>
-                            <TextField className='bg-[#747CE6] h-10 text-white' size='small' value={session.user?.email} disabled={true}/>
+                            <input className='bg-[#747CE6] w-60 h-10 outline-none font-light text-white' value={session.user?.email?.toString()} disabled={true}/>
                         </div>
                     </div>
                 </div>
@@ -63,7 +63,7 @@ function Index({ passData, status, userData,  }: Props) {
                     <div className='flex flex-col m-2'>
                         <p className='text-white ml-5 m-1'>Phone Number</p>
                         <div className='bg-[#747CE6] rounded-3xl border-white border-2 px-5'>
-                            <TextField className='bg-[#747CE6] h-10 text-white' size='small' value={phone} type="number" onChange={(e) => { setPhone(parseInt(e.target.value)) }}  />
+                            <input className='bg-[#747CE6] font-bold w-60 h-10 outline-none text-white' value={phone} type="number" onChange={(e) => { setPhone(parseInt(e.target.value)) }}  />
                         </div>
                     </div>
                 </div>
@@ -72,6 +72,8 @@ function Index({ passData, status, userData,  }: Props) {
                             Pass Selected: <strong>{id?.toString().toUpperCase()}</strong> ~ {passData.fee} INR</p>
                     </div>
                     <PriceFields/>
+                    <p className='text-white'>*Note: This page is only to buy the passes... An email will be sent later to register for the events</p>
+                    <p className='text-white'>Earlybird price 599 INR for gold pass till 20/11/2022. post that the price shoots up to 699 INR.</p>
                     <button className={'rounded-3xl bg-blue-500 m-20 p-2 px-5 text-white hover:opacity-60 '} onClick={()=>{makePayment(id,name,session.user?.email,phone,paymentCallBack)}}>Register</button>
                 </div>
             )

@@ -27,9 +27,13 @@ export interface Tile{
     imageUrl:string;
 }
 
-export interface OurTeam{
+export interface individualTeamMember{
     name:string;
-    year: "1"|"2";
     position:string;
-    imageURL:string;
+    image:string;
+}
+export interface OurTeam{
+    1: individualTeamMember[],
+    2: individualTeamMember[],
+    3: individualTeamMember[],
 }
