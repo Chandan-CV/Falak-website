@@ -12,6 +12,7 @@ import { OurTeam } from '../types';
 import Image from 'next/image';
 import Head from 'next/head';
 import useWindowDimensions from '../components/useWindowDimensions';
+import Footer from '../components/Footer';
 
 interface Props{
   TilesData: any;
@@ -117,6 +118,7 @@ Falak is a celebration of a sense of belonging, a palace where participants from
       </div>
       </div>
     </div>
+    <Footer/>
   </div>
   </ThemeProvider>
 )

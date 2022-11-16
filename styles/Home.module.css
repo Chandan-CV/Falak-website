@@ -13,12 +13,9 @@
 }
 
 .footer {
-  display: flex;
-  flex: 1;
-  padding: 2rem 0;
-  border-top: 1px solid #eaeaea;
-  justify-content: center;
-  align-items: center;
+  background: linear-gradient(to right,#3B3786,#747CE6);
+  flex-direction: row;
+  display: flex ;
 }
 
 .footer a {
