@@ -18,6 +18,7 @@ function Index({ passData, status, userData,  }: Props) {
     const router = useRouter();
     const [name, setName] = useState(session?.user?.name);
     const [phone, setPhone] = useState<number>();
+    const [college, setCollege] = useState<string>();
     const { id } = router.query;
     const paymentCallBack =()=>{
         router.replace('/');
@@ -52,6 +53,10 @@ function Index({ passData, status, userData,  }: Props) {
                         <div className='bg-[#747CE6] rounded-3xl border-white border-2 px-5'>
                             <input className='bg-[#747CE6] w-60 h-10 outline-none font-light text-white' value={session.user?.email?.toString()} disabled={true}/>
                         </div>
+                        <p className='text-white ml-5 m-1'>College</p>
+                        <div className='bg-[#747CE6] rounded-3xl border-white border-2 px-5'>
+                            <input className='bg-[#747CE6] w-60 h-10 outline-none font-light text-white' value={college} onChange={(e)=>{setCollege(e.target.value)}} />
+                        </div>
                     </div>
                 </div>
                 <div className='flex flex-wrap justify-center mt-3'>
@@ -74,7 +79,7 @@ function Index({ passData, status, userData,  }: Props) {
                     </div>
                     <PriceFields/>
                     <p className='text-white'>*Note: This page is only to buy the passes... An email will be sent later to register for the events</p>
-                    <button className={'rounded-3xl bg-blue-500 m-20 p-2 px-5 text-white hover:opacity-60 '} onClick={()=>{makePayment(id,name,session.user?.email,phone,paymentCallBack)}}>Register</button>
+                    <button className={'rounded-3xl bg-blue-500 m-20 p-2 px-5 text-white hover:opacity-60 '} onClick={()=>{makePayment(id,name,session.user?.email,phone,college,paymentCallBack)}}>Register</button>
                 </div>
             )
         } else {

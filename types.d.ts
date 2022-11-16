@@ -37,3 +37,8 @@ export interface OurTeam{
     2: individualTeamMember[],
     3: individualTeamMember[],
 }
+
+export interface userData{
+    name: string
+    
+}
