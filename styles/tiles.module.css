@@ -127,6 +127,8 @@
     font-size: 350%;
     font-weight: bold;
     text-align: center;
+    -webkit-text-stroke: 3px black;
+	-webkit-text-fill-color: white;
 }
 @media (max-width:600px){
     .frontName{
