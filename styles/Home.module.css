@@ -140,7 +140,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(to right,#000000,#3B3786);
+  background: linear-gradient(to top,#292929,#3B3786);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -157,7 +157,7 @@
   margin-top: 100px;
   border-radius: 76px;
   height: auto;
-  box-shadow: -10px -10px 10px #505050, 10px 10px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: -10px -10px 10px #3a3a3a, 10px 10px 10px #00000033;
   justify-content: center;
   align-items: center;
   text-align: center;
