@@ -12,6 +12,7 @@ function MainPagePassComponent({userData, userDataStatus}:Props) {
     name:userData.name,
     pass: userData.pass,
     email: userData.email,
+    college: userData.college
   }
   return (
     <div className='w-full flex flex-col justify-center mt-10 items-center'>

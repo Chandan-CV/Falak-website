@@ -22,10 +22,11 @@ const makePayment = async (
   name: string | null | undefined,
   email: string | null | undefined,
   phone: number | undefined,
+  college: string | undefined,
   callBackFunction: () => void
 ) => {
-  if(!phone){
-alert("please enter your mobile number")
+  if(!phone || !college){
+alert("please fill up all the fields")
   }
   else{
     
@@ -63,6 +64,7 @@ alert("please enter your mobile number")
           name,
           email,
           phone,
+          college,
           paymentID: response.razorpay_payment_id,
           orderID: response.razorpay_order_id,
           signature: response.razorpay_signature,
