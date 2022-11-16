@@ -71,7 +71,7 @@ export default function Home({TilesData,status,userData, userDataStatus, team}:P
         <div className='flex flex-row items-center justify-center mt-5'>
         <p className='flex flex-end content-center text-center text-xl text-white'>
 
-Falak is a celebration of a sense of belonging, a palace where participants from a variety of different backgrounds, over the span of five days, come together to partake in their desired events united by their own volition, fostering teamwork and companionship among the participants and spectators alike.
+Falak is a celebration of a sense of belonging, a palace where participants from a variety of different backgrounds, over the span of three days, come together to partake in their desired events united by their own volition, fostering teamwork and companionship among the participants and spectators alike.
 
 
  </p>
