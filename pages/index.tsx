@@ -12,6 +12,7 @@ import { OurTeam } from '../types';
 import Image from 'next/image';
 import Head from 'next/head';
 import useWindowDimensions from '../components/useWindowDimensions';
+import Footer from '../components/Footer';
 
 interface Props{
   TilesData: any;
@@ -45,7 +46,9 @@ export default function Home({TilesData,status,userData, userDataStatus, team}:P
   <div className={styles.container}>
    <Navbar/>
     <div className={styles.logo_bg}>
-      <Image style={{marginLeft:30}} src={Logo} alt={''} height={730}/>
+      <div style={{width:"94%"}}>
+        <Image style={{marginLeft:"2%"}} src={Logo} alt={''} height={730}/>
+      </div>
     </div>
     
     {
@@ -68,7 +71,7 @@ export default function Home({TilesData,status,userData, userDataStatus, team}:P
         <div className='flex flex-row items-center justify-center mt-5'>
         <p className='flex flex-end content-center text-center text-xl text-white'>
 
-Falak is a celebration of a sense of belonging, a palace where participants from a variety of different backgrounds, over the span of five days, come together to partake in their desired events united by their own volition, fostering teamwork and companionship among the participants and spectators alike.
+Falak is a celebration of a sense of belonging, a palace where participants from a variety of different backgrounds, over the span of three days, come together to partake in their desired events united by their own volition, fostering teamwork and companionship among the participants and spectators alike.
 
 
  </p>
@@ -115,6 +118,7 @@ Falak is a celebration of a sense of belonging, a palace where participants from
       </div>
       </div>
     </div>
+    <Footer/>
   </div>
   </ThemeProvider>
 )
