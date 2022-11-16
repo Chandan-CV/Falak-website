@@ -72,6 +72,7 @@ function Index({ passData, status, userData,  }: Props) {
                             Pass Selected: <strong>{id?.toString().toUpperCase()}</strong> ~ {passData.fee} INR</p>
                     </div>
                     <PriceFields/>
+                    <p className='text-white'>*Note: This page is only to buy the passes... An email will be sent later to register for the events</p>
                     <button className={'rounded-3xl bg-blue-500 m-20 p-2 px-5 text-white hover:opacity-60 '} onClick={()=>{makePayment(id,name,session.user?.email,phone,paymentCallBack)}}>Register</button>
                 </div>
             )
