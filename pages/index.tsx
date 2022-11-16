@@ -45,7 +45,9 @@ export default function Home({TilesData,status,userData, userDataStatus, team}:P
   <div className={styles.container}>
    <Navbar/>
     <div className={styles.logo_bg}>
-      <Image style={{marginLeft:30}} src={Logo} alt={''} height={730}/>
+      <div style={{width:"94%"}}>
+        <Image style={{marginLeft:"2%"}} src={Logo} alt={''} height={730}/>
+      </div>
     </div>
     
     {
