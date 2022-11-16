@@ -15,7 +15,11 @@ export default function Placard({name,year,pos,src}:Props) {
         <div className= 'flex flex-col items-center text-center absolute w-[291px] h-1/5 bg-[#292929] rounded-b-[39px] -mb-[1px]'>
         <p className='font-semibold text-3xl text-white m-[20px]'>{name}</p>
         {/* <p className={(year=='1')? styles.year1:styles.year2} >{(year=='1')? "First-Year":"Second-Year"}</p> */}
+<<<<<<< HEAD
         <p className='font-semibold text-lg text-white'>{pos}</p>
+=======
+        <p className='font-semibold text-lg text-white '>{pos}</p>
+>>>>>>> 80a00409811cdcc121d91ec902cd84f20911b4bd
         </div>
     </div>
   )

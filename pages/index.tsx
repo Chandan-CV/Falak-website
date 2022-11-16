@@ -11,6 +11,7 @@ import Logo from '../assets/Logo.png';
 import { OurTeam } from '../types';
 import Image from 'next/image';
 import Head from 'next/head';
+import useWindowDimensions from '../components/useWindowDimensions';
 
 interface Props{
   TilesData: any;
@@ -21,6 +22,7 @@ interface Props{
 }
 
 export default function Home({TilesData,status,userData, userDataStatus, team}:Props) {
+  const {width, height} = useWindowDimensions();
   const{data:session} = useSession();
   const theme = createTheme({
     palette:{
@@ -74,9 +76,14 @@ Falak is a celebration of a sense of belonging, a palace where participants from
       </div>
     </div>
     <div className='flex justify-center p-20'>
-    <iframe width={800} height={450}
-      src="https://www.youtube.com/embed/tgbNymZ7vqY">
-    </iframe>
+    {width?width<600?
+   <iframe width={1200} height={600*3/4}
+   src="https://www.youtube.com/embed/oC-jc_dDaiU">
+ </iframe>: <iframe width={1200} height={900*3/4}
+   src="https://www.youtube.com/embed/oC-jc_dDaiU">
+ </iframe>:null
+
+  }
     </div>
     <div className={styles.events}  id="eventstag">
       <p className='text-center text-5xl font-bold text-white mt-10'>Events</p>
