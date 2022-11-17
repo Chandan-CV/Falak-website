@@ -63,6 +63,7 @@ function Index({ passData, status, userData,  }: Props) {
                 <button className={'rounded-3xl bg-[#CD7F32] m-2 text-gray-700 p-2 px-5 hover:opacity-60'} onClick={()=>{router.push('/Register/bronze')}}>BRONZE</button>
                 <button className={'rounded-3xl bg-[#757575] m-2 text-gray-700 p-2 px-5 hover:opacity-60'} onClick={()=>{router.push('/Register/silver')}}>SILVER</button>
                 <button className={'rounded-3xl bg-[#ffd700] m-2 text-gray-700 p-2 px-5 hover:opacity-60'} onClick={()=>{router.push('/Register/gold')}}>GOLD</button>
+                <button className={'rounded-3xl bg-[#89cff0] m-2 text-gray-700 p-2 px-5 hover:opacity-60'} onClick={()=>{router.push('/Register/blue')}}>FASHION</button>
                 </div>
                 <div>
                     <div className='flex flex-col m-2'>
