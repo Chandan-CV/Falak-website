@@ -75,7 +75,7 @@ function Index({ passData, status, userData,  }: Props) {
                     <div className='text-white text-xl flex justify-center items-center flex-col'>
                         <p>
                             Pass Selected: <strong>{id?.toString().toUpperCase()}</strong> ~ {passData.fee} INR</p>
-                    <p className='text-white font-bold m-2'> Earlybird offer:  <del>699</del> 599 INR only for today!.</p>
+                    <p className='text-white font-bold m-2'> Earlybird offer: Gold pass <del>699</del> 599 INR only for today!</p>
                     </div>
                     <PriceFields/>
                     <p className='text-white'>*Note: This page is only to buy the passes... An email will be sent later to register for the events</p>
