@@ -75,12 +75,12 @@ function Index({ passData, status, userData,  }: Props) {
                     <div className='text-white text-xl flex justify-center items-center flex-col'>
                         <p>
                             Pass Selected: <strong>{id?.toString().toUpperCase()}</strong> ~ {passData.fee} INR</p>
-                    <p className='text-white font-bold m-2'> Earlybird offer:  <del>699</del> 599 INR for gold pass till 20/11/2022.</p>
+                    <p className='text-white font-bold m-2'> Earlybird offer:  <del>699</del> 599 INR only for today!.</p>
                     </div>
                     <PriceFields/>
                     <p className='text-white'>*Note: This page is only to buy the passes... An email will be sent later to register for the events</p>
-                    {/* <button className={'rounded-3xl bg-blue-500 m-20 p-2 px-5 text-white hover:opacity-60 '} onClick={()=>{makePayment(id,name,session.user?.email,phone,college,paymentCallBack)}}>Register</button> */}
-                    <button className={'rounded-3xl bg-blue-500 m-20 p-2 px-5 text-white hover:opacity-60 '} onClick={()=>{router.push("/Register/PhysicalPayment")}}>Register</button>
+                    <button className={'rounded-3xl bg-blue-500 m-20 p-2 px-5 text-white hover:opacity-60 '} onClick={()=>{makePayment(id,name,session.user?.email,phone,college,paymentCallBack)}}>Register</button>
+                    {/* <button className={'rounded-3xl bg-blue-500 m-20 p-2 px-5 text-white hover:opacity-60 '} onClick={()=>{router.push("/Register/PhysicalPayment")}}>Register</button> */}
                 </div>
             )
         } else {
