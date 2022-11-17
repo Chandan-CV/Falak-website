@@ -1,5 +1,5 @@
 .container {
-  padding: 0 2rem;
+  background-color: #292929;
 }
 
 .main {
@@ -13,12 +13,10 @@
 }
 
 .footer {
-  display: flex;
-  flex: 1;
-  padding: 2rem 0;
-  border-top: 1px solid #eaeaea;
-  justify-content: center;
-  align-items: center;
+  background: linear-gradient(to right,#3B3786,#747CE6);
+  flex-direction: row;
+  display: flex ;
+  flex-wrap: wrap;
 }
 
 .footer a {
@@ -126,4 +124,111 @@
   .logo img {
     filter: invert(1);
   }
+}
+
+
+.appbar{
+  background: linear-gradient(to right,#3B3786,#747CE6);
+}
+
+
+.logo_bg{
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to top,#292929,#3B3786);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  object-fit:  cover;
+
+}
+
+.about_us{
+  width: 65%;
+  padding-top: 25px;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-bottom: 50px;
+  margin-top: 100px;
+  border-radius: 76px;
+  height: auto;
+  box-shadow: -10px -10px 10px #3a3a3a, 10px 10px 10px #00000033;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  align-content: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.video{
+  width: 80%;
+  height: 100%;
+}
+
+@media (max-width: 600px){
+  .about_us{
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .video{
+    width: 100%;  
+  }
+}
+.underline{
+  width:175px;
+  height: 7px;
+  background-color: #DEAC39;
+  box-shadow: 0 0 10px #DEAC39;
+  border-radius: 50px;
+  margin: 20px;
+}
+
+
+.events{
+  height: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.underline2{
+  width:125px;
+  height: 7px;
+  background-color: #747CE6;
+  box-shadow: 0 0 10px #747CE6;
+  border-radius: 50px;
+  margin: 20px;
+  margin-bottom: 100px;
+}
+
+.underline3{
+  width:175px;
+  height: 7px;
+  background-color: #E2642B;
+  box-shadow: 0 0 10px #E2642B;
+  border-radius: 50px;
+  margin: 20px;
+  margin-bottom: 100px;
+}
+
+.grid_container{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center; 
+}
+
+@media (max-width:620px){
+  .appBarShit{
+    display: none;
+  }
+
 }
