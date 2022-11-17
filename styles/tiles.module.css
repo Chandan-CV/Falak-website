@@ -31,6 +31,9 @@
     .card_slv:hover {
         transform: rotateY(180deg);
     }
+    .card_fashion:hover {
+        transform: rotateY(180deg);
+    }
 
     .card_gold:hover{
         transform: rotateY(180deg);
@@ -85,6 +88,16 @@
     transition: all 0.5s ease;
     border-radius: 35px;
     border-color: #E5E4E2;
+    border-width: 5px;
+}
+.card_fashion{
+    position:absolute;
+    height:100%;
+    width: 100%;
+    transform-style: preserve-3d;
+    transition: all 0.5s ease;
+    border-radius: 35px;
+    border-color: #89cff0;
     border-width: 5px;
 }
 .card_none{
@@ -173,4 +186,8 @@
   
 .plat{
     color: #E5E4E2;
+}
+
+.fashion{
+    color: #89cff0
 }
