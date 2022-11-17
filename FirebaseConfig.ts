@@ -1,7 +1,7 @@
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import {getFirestore} from 'firebase/firestore';
-import firebase from 'firebase/compat';
+
 const firebaseConfig = {
   apiKey: "AIzaSyCdAMZS_MXLayHuikcwvoypWgCofCBvs5Y",
   authDomain: "falak-28f37.firebaseapp.com",
@@ -16,5 +16,11 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 
 const db = getFirestore(app);
+let analytics:any;
 
-export {app,db}
+if (app.name && typeof window !== 'undefined') {
+  analytics = getAnalytics(app);
+}
+
+
+export {app,db,analytics}

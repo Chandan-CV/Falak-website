@@ -13,6 +13,8 @@ import Image from 'next/image';
 import Head from 'next/head';
 import useWindowDimensions from '../components/useWindowDimensions';
 import Footer from '../components/Footer';
+import { analytics } from '../FirebaseConfig';
+import { logEvent } from 'firebase/analytics';
 
 interface Props{
   TilesData: any;
