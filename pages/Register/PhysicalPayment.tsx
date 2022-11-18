@@ -8,7 +8,7 @@ function PhysicalPayment() {
         <Navbar/>
         <div className='p-5'>
         <h1 className='text-white text-3xl mb-20 mt-10'>NON-MAHE STUDENTS: REGISTRATIONS OPENING SOON!</h1>
-        <h1 className='text-white text-3xl'>MAHE STUDENTS: EARLY BIRD OFFER OPEN FOR OFFLINE REGISTRATION AT COMMON AREA HB1 AND HB2 COMMON AREA FROM 9-12PM TODAY</h1>
+        <h1 className='text-white text-3xl'>MAHE STUDENTS: OFFLINE REGISTRATIONS REGISTRATIONS AT ROOM 203 FROM 3 TO 5 PM!</h1>
         </div>
     </div>
   )
