@@ -55,8 +55,8 @@ export default function Home({TilesData,status,userData, userDataStatus, team,Ca
       <Carousel autoPlay showArrows={false} interval={3000} infiniteLoop={true} showIndicators={false} showStatus={false} showThumbs={false} stopOnHover={false}>
       {
         CarouselImages.map((e)=>{
-          return <div>
-            <img src={e} alt='' width={width}/>
+          return <div key={e.length/10}>
+            <img src={e} alt='' width={width} key={e}/>
             </div>
             
         })
