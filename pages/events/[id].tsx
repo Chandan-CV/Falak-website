@@ -65,7 +65,7 @@ function EventPage({data,status}:Props) {
           <div className={styles.underline3}/>
         </div>
         <div className='flex flex-wrap justify-center'>
-        {data.coordinators.map((e)=> <PlacardLong contact={e.phone} email={e.email} name={e.name} src={e.image} key={e.email}/>)}
+        {data.coordinators?.map((e)=> <PlacardLong contact={e.phone} email={e.email} name={e.name} src={e.image} key={e.email}/>)}
         </div>
     </div>
 </ThemeProvider>
