@@ -7,16 +7,10 @@ import Navbar from '../components/Navbar';
 import Placard from '../components/Placard';
 import Tile from '../components/Tile';
 import styles from '../styles/Home.module.css'
-import Logo from '../assets/Logo.png';
 import { OurTeam } from '../types';
-import Image from 'next/image';
 import Head from 'next/head';
 import useWindowDimensions from '../components/useWindowDimensions';
 import Footer from '../components/Footer';
-import bandnobg from '../assets/bandnobg.jpg'
-import falaknobg from '../assets/falaknobg.jpg'
-import singernobg from '../assets/singernobg.jpg'
-import standupnobg from '../assets/standupnobg.jpg'
 import {Carousel} from 'react-responsive-carousel'
 import 'react-responsive-carousel/lib/styles/carousel.min.css'
 interface Props{
@@ -34,7 +28,7 @@ export default function Home({TilesData,status,userData, userDataStatus, team,Ca
   const theme = createTheme({
     palette:{
       primary:{
-        main:"#6C72D9",
+        main:"#B7482D",
         
       },
       secondary:{
@@ -103,7 +97,7 @@ Falak is a celebration of a sense of belonging, a palace where participants from
     </div>
     <div className={styles.events}  id="eventstag">
       <p className='text-center text-5xl font-bold text-white mt-10'>Events</p>
-      <div className={styles.underline2}/>
+      <div className={styles.underline3}/>
       <div className={styles.grid_container}>
 {
     TilesData.map((tile:any)=><Tile src={tile[4]} name={tile[0]} date={tile[2]} description={tile[1]} pass={tile[3]} key={title[0]}/>

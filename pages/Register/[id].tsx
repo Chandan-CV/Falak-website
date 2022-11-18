@@ -42,45 +42,59 @@ function Index({ passData, status, userData,  }: Props) {
                 <div>
                     <div className='flex flex-col mt-6 m-2'>
                         <p className='text-white ml-5 m-1'>Name</p>
-                        <div className='bg-[#747CE6] rounded-3xl border-white border-2 px-5'>
-                            <input className='bg-[#747CE6] w-60 h-10 outline-none font-semibold text-white' value={name?.toString()} onChange={(e)=>{setName(e.target.value)}}/>
+                        <div className='bg-[#B7482D] rounded-3xl border-white border-2 px-5'>
+                            <input className='bg-[#B7482D] w-60 h-10 outline-none font-semibold text-white' value={name?.toString()} onChange={(e)=>{setName(e.target.value)}}/>
                         </div>
                     </div>
                 </div>
                 <div>
                     <div className='flex flex-col m-2'>
                         <p className='text-white ml-5 m-1'>Email</p>
-                        <div className='bg-[#747CE6] rounded-3xl border-white border-2 px-5'>
-                            <input className='bg-[#747CE6] w-60 h-10 outline-none font-light text-white' value={session.user?.email?.toString()} disabled={true}/>
+                        <div className='bg-[#B7482D] rounded-3xl border-white border-2 px-5'>
+                            <input className='bg-[#B7482D] w-60 h-10 outline-none font-light text-white' value={session.user?.email?.toString()} disabled={true}/>
                         </div>
                         <p className='text-white ml-5 m-1'>College</p>
-                        <div className='bg-[#747CE6] rounded-3xl border-white border-2 px-5'>
-                            <input className='bg-[#747CE6] w-60 h-10 outline-none font-light text-white' value={college} onChange={(e)=>{setCollege(e.target.value)}} />
+                        <div className='bg-[#B7482D] rounded-3xl border-white border-2 px-5'>
+                            <input className='bg-[#B7482D] w-60 h-10 outline-none font-light text-white' value={college} onChange={(e)=>{setCollege(e.target.value)}} />
                         </div>
                     </div>
                 </div>
-                <div className='flex flex-wrap justify-center mt-3'>
+                <div className='flex flex-wrap justify-center mt-3 flex-col items-center'>
+                    <div className='flex flex-wrap justify-center mt-3 flex-row items-center'>
+
+                <button className={'rounded-3xl bg-[#ae7c49] m-2 text-gray-700 p-2 px-5 hover:opacity-60'} onClick={()=>{router.push('/Register/mun')}}>MUN</button>
                 <button className={'rounded-3xl bg-[#CD7F32] m-2 text-gray-700 p-2 px-5 hover:opacity-60'} onClick={()=>{router.push('/Register/bronze')}}>BRONZE</button>
                 <button className={'rounded-3xl bg-[#757575] m-2 text-gray-700 p-2 px-5 hover:opacity-60'} onClick={()=>{router.push('/Register/silver')}}>SILVER</button>
                 <button className={'rounded-3xl bg-[#ffd700] m-2 text-gray-700 p-2 px-5 hover:opacity-60'} onClick={()=>{router.push('/Register/gold')}}>GOLD</button>
+                <button className={'rounded-3xl bg-[#e7b1a5] m-2 text-gray-700 p-2 px-5 hover:opacity-60'} onClick={()=>{router.push('/Register/mungold')}}>MUN GOLD</button>
+                
+                    </div>
+                <p className='text-white text-center text-6xl m-8 font-semibold max-sm:text-3xl items-center justify-center'>Team Registrations</p>
+                <div className='grid grid-cols-3 max-sm:grid-cols-2'>
                 <button className={'rounded-3xl bg-[#89cff0] m-2 text-gray-700 p-2 px-5 hover:opacity-60'} onClick={()=>{router.push('/Register/fashion')}}>FASHION</button>
+                <button className={'rounded-3xl bg-[#Ec3808] m-2 text-gray-700 p-2 px-5 hover:opacity-60'} onClick={()=>{router.push('/Register/tennis')}}>TENNIS</button>
+                <button className={'rounded-3xl bg-[#Ec3808] m-2 text-gray-700 p-2 px-5 hover:opacity-60'} onClick={()=>{router.push('/Register/chess')}}>CHESS</button>
+                <button className={'rounded-3xl bg-[#Ec3808] m-2 text-gray-700 p-2 px-5 hover:opacity-60'} onClick={()=>{router.push('/Register/basketball')}}>BASKETBALL</button>
+                <button className={'rounded-3xl bg-[#Ec3808] m-2 text-gray-700 p-2 px-5 hover:opacity-60'} onClick={()=>{router.push('/Register/football')}}>FOOTBALL</button>
+                </div>
                 </div>
                 <div>
                     <div className='flex flex-col m-2'>
                         <p className='text-white ml-5 m-1'>Phone Number</p>
-                        <div className='bg-[#747CE6] rounded-3xl border-white border-2 px-5'>
-                            <input className='bg-[#747CE6] font-bold w-60 h-10 outline-none text-white' value={phone} type="number" onChange={(e) => { setPhone(parseInt(e.target.value)) }}  />
+                        <div className='bg-[#B7482D] rounded-3xl border-white border-2 px-5'>
+                            <input className='bg-[#B7482D] font-bold w-60 h-10 outline-none text-white' value={phone} type="number" onChange={(e) => { setPhone(parseInt(e.target.value)) }}  />
                         </div>
                     </div>
                 </div>
                     <div className='text-white text-xl flex justify-center items-center flex-col'>
                         <p>
                             Pass Selected: <strong>{id?.toString().toUpperCase()}</strong> ~ {passData.fee} INR</p>
+                    <p className='text-white font-bold m-2 text-center'>For team registrations only one person has to buy the pass for the whole team</p>
                     </div>
                     <PriceFields/>
                     <p className='text-white'>*Note: This page is only to buy the passes... An email will be sent later to register for the events</p>
                     {/* <button className={'rounded-3xl bg-blue-500 m-20 p-2 px-5 text-white hover:opacity-60 '} onClick={()=>{makePayment(id,name,session.user?.email,phone,college,paymentCallBack)}}>Register</button> */}
-                    <button className={'rounded-3xl bg-blue-500 m-20 p-2 px-5 text-white hover:opacity-60 '} onClick={()=>{router.push("/Register/PhysicalPayment")}}>Register</button>
+                    <button className={'rounded-3xl bg-[#B7482D] m-20 p-2 px-5 text-white hover:opacity-60 '} onClick={()=>{router.push("/Register/PhysicalPayment")}}>Register</button>
                 </div>
             )
         } else {

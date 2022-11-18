@@ -11,17 +11,17 @@ function Navbar() {
     <AppBar position='sticky'>
     <Toolbar className={styles.appbar}>
       <div className='flex flex-row justify-between items-center w-full'>
-        <p>Falak 22</p>
+        <p className='font-Amita text-3xl cursor-pointer' onClick={()=>{router.push('/')}}>Falak 22</p>
         <div className={styles.appBarShit}>
-          <button className={'bg-[#6C72D9] rounded-full m-2 p-2 px-5 border-2 box-border hover:opacity-60'} onClick={()=>{router.replace('/')}}>HOME</button>
-          <button className={'bg-[#6C72D9] rounded-full m-2 p-2 px-5 border-2 box-border hover:opacity-60'} onClick={()=>{
+          <button className={'bg-[#B7482D] rounded-full m-2 p-2 px-5  box-border hover:opacity-60'} onClick={()=>{router.replace('/')}}>HOME</button>
+          <button className={'bg-[#B7482D] rounded-full m-2 p-2 px-5  box-border hover:opacity-60'} onClick={()=>{
             router.replace('/#eventstag');
         }}>EVENTS</button>
-          <button className={'bg-[#6C72D9] rounded-full p-2 m-2 px-5 border-2 box-border hover:opacity-60'} onClick={()=>{router.replace('/schedule')}}>SCHEDULE</button>
+          <button className={'bg-[#B7482D] rounded-full p-2 m-2 px-5  box-border hover:opacity-60'} onClick={()=>{router.replace('/schedule')}}>SCHEDULE</button>
           {session?
-          <button className={'bg-[#6C72D9] rounded-full p-2 m-2 px-5 border-2 box-border hover:opacity-60'} onClick={()=>{signOut()}}>SIGN OUT</button>
+          <button className={'bg-[#B7482D] rounded-full p-2 m-2 px-5  box-border hover:opacity-60'} onClick={()=>{signOut()}}>SIGN OUT</button>
           :
-          <button className={'bg-[#6C72D9] rounded-full p-2 px-5 m-2 border-2 box-border hover:opacity-60'} onClick={()=>{signIn()}}>SIGN IN</button>
+          <button className={'bg-[#B7482D] rounded-full p-2 px-5 m-2  box-border hover:opacity-60'} onClick={()=>{signIn()}}>SIGN IN</button>
           }
         </div>
       </div>
