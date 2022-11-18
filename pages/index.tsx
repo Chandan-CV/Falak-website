@@ -52,7 +52,7 @@ export default function Home({TilesData,status,userData, userDataStatus, team,Ca
   <div className={styles.container}>
    <Navbar/>
     <div className='flex flex-row'>
-      <Carousel autoPlay showArrows={false} interval={3000} infiniteLoop showIndicators={false} showStatus={false} showThumbs={false}>
+      <Carousel autoPlay showArrows={false} interval={3000} infiniteLoop={true} showIndicators={false} showStatus={false} showThumbs={false}>
       {
         CarouselImages.map((e)=>{
           return <div>
