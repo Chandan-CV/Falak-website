@@ -13,10 +13,6 @@ import Image from 'next/image';
 import Head from 'next/head';
 import useWindowDimensions from '../components/useWindowDimensions';
 import Footer from '../components/Footer';
-import bandnobg from '../assets/bandnobg.jpg'
-import falaknobg from '../assets/falaknobg.jpg'
-import singernobg from '../assets/singernobg.jpg'
-import standupnobg from '../assets/standupnobg.jpg'
 import {Carousel} from 'react-responsive-carousel'
 import 'react-responsive-carousel/lib/styles/carousel.min.css'
 interface Props{
