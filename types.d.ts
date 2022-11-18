@@ -7,7 +7,7 @@ export interface EventData{
 export interface EventPageData{
     name:string;
     description:string[];
-    pass: "Silver"|"Gold"|"Platinum"|"Bronze";
+    pass: "Silver"|"Gold"|"Platinum"|"Bronze"|"Sports"|"Fashion";
     image:string;
     coordinators:CoordinatorsData[] ;
 }
