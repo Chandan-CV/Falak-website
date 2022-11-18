@@ -17,6 +17,8 @@
   flex-direction: row;
   display: flex ;
   flex-wrap: wrap;
+  padding: 20px;
+  align-items: center;
 }
 
 .footer a {
