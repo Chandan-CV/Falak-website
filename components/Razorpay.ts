@@ -1,4 +1,6 @@
+import { logEvent } from 'firebase/analytics';
 import Router from 'next/router'
+import { analytics } from '../FirebaseConfig';
 
 
 const initializeRazorpay = () => {
@@ -26,10 +28,10 @@ const makePayment = async (
   callBackFunction: () => void
 ) => {
   if(!phone || !college){
-alert("please fill up all the fields")
+    alert("please fill up all the fields")
   }
   else{
-    
+    if(analytics){ logEvent(analytics,'begin_checkout') }
     const res = await initializeRazorpay();
     if (!res) {
       alert("Razorpay SDK Failed to load");
