@@ -30,6 +30,9 @@
     .card_slv:hover {
         transform: rotateY(180deg);
     }
+    .card_mun:hover {
+        transform: rotateY(180deg);
+    }
     .card_fashion:hover {
         transform: rotateY(180deg);
     }
@@ -109,6 +112,16 @@
     transition: all 0.5s ease;
     border-radius: 35px;
     border-color: #Ec3808;
+    border-width: 5px;
+}
+.card_mun{
+    position:absolute;
+    height:100%;
+    width: 100%;
+    transform-style: preserve-3d;
+    transition: all 0.5s ease;
+    border-radius: 35px;
+    border-color: #ae7c49;
     border-width: 5px;
 }
 .card_none{
@@ -205,4 +218,7 @@
 
 .sports{
     color: #Ec3808
+}
+.mun{
+    color: #ae7c49
 }

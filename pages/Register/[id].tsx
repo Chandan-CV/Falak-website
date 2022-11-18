@@ -63,7 +63,15 @@ function Index({ passData, status, userData,  }: Props) {
                 <button className={'rounded-3xl bg-[#CD7F32] m-2 text-gray-700 p-2 px-5 hover:opacity-60'} onClick={()=>{router.push('/Register/bronze')}}>BRONZE</button>
                 <button className={'rounded-3xl bg-[#757575] m-2 text-gray-700 p-2 px-5 hover:opacity-60'} onClick={()=>{router.push('/Register/silver')}}>SILVER</button>
                 <button className={'rounded-3xl bg-[#ffd700] m-2 text-gray-700 p-2 px-5 hover:opacity-60'} onClick={()=>{router.push('/Register/gold')}}>GOLD</button>
+                <p className='text-white text-center text-6xl m-8 font-semibold'>Team Registrations</p>
+                <div className='grid grid-cols-3'>
                 <button className={'rounded-3xl bg-[#89cff0] m-2 text-gray-700 p-2 px-5 hover:opacity-60'} onClick={()=>{router.push('/Register/fashion')}}>FASHION</button>
+                <button className={'rounded-3xl bg-[#Ec3808] m-2 text-gray-700 p-2 px-5 hover:opacity-60'} onClick={()=>{router.push('/Register/tennis')}}>TENNIS</button>
+                <button className={'rounded-3xl bg-[#Ec3808] m-2 text-gray-700 p-2 px-5 hover:opacity-60'} onClick={()=>{router.push('/Register/chess')}}>CHESS</button>
+                <button className={'rounded-3xl bg-[#Ec3808] m-2 text-gray-700 p-2 px-5 hover:opacity-60'} onClick={()=>{router.push('/Register/basketball')}}>BASKETBALL</button>
+                <button className={'rounded-3xl bg-[#Ec3808] m-2 text-gray-700 p-2 px-5 hover:opacity-60'} onClick={()=>{router.push('/Register/footbal')}}>FOOTBALL</button>
+                <button className={'rounded-3xl bg-[#ae7c49] m-2 text-gray-700 p-2 px-5 hover:opacity-60'} onClick={()=>{router.push('/Register/mun')}}>MUN</button>
+                </div>
                 </div>
                 <div>
                     <div className='flex flex-col m-2'>
@@ -76,7 +84,7 @@ function Index({ passData, status, userData,  }: Props) {
                     <div className='text-white text-xl flex justify-center items-center flex-col'>
                         <p>
                             Pass Selected: <strong>{id?.toString().toUpperCase()}</strong> ~ {passData.fee} INR</p>
-                    <p className='text-white font-bold m-2'> Earlybird offer: Gold pass <del>699</del> 599 INR only for today!</p>
+                    <p className='text-white font-bold m-2'>For team registrations only one person has to buy the pass for the whole team</p>
                     </div>
                     <PriceFields/>
                     <p className='text-white'>*Note: This page is only to buy the passes... An email will be sent later to register for the events</p>
