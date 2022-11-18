@@ -13,16 +13,22 @@ import Image from 'next/image';
 import Head from 'next/head';
 import useWindowDimensions from '../components/useWindowDimensions';
 import Footer from '../components/Footer';
-
+import bandnobg from '../assets/bandnobg.jpg'
+import falaknobg from '../assets/falaknobg.jpg'
+import singernobg from '../assets/singernobg.jpg'
+import standupnobg from '../assets/standupnobg.jpg'
+import {Carousel} from 'react-responsive-carousel'
+import 'react-responsive-carousel/lib/styles/carousel.min.css'
 interface Props{
   TilesData: any;
   status:number;
   userData:any;
   userDataStatus: number;
   team:OurTeam;
+  CarouselImages: string[]
 }
 
-export default function Home({TilesData,status,userData, userDataStatus, team}:Props) {
+export default function Home({TilesData,status,userData, userDataStatus, team,CarouselImages}:Props) {
   const {width, height} = useWindowDimensions();
   const{data:session} = useSession();
   const theme = createTheme({
@@ -45,10 +51,17 @@ export default function Home({TilesData,status,userData, userDataStatus, team}:P
 </Head>
   <div className={styles.container}>
    <Navbar/>
-    <div className={styles.logo_bg}>
-      <div style={{width:"94%"}}>
-        <Image style={{marginLeft:"2%"}} src={Logo} alt={''} height={730}/>
-      </div>
+    <div className='flex flex-row'>
+      <Carousel autoPlay showArrows={false} interval={3000} infiniteLoop={true} showIndicators={false} showStatus={false} showThumbs={false} stopOnHover={false}>
+      {
+        CarouselImages.map((e)=>{
+          return <div key={e.length/10}>
+            <img src={e} alt='' width={width} key={e}/>
+            </div>
+            
+        })
+      }
+      </Carousel>
     </div>
     
     {
@@ -135,13 +148,16 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
     const teamRaw = await fetch(`${process.env.BASE_URL}/api/getNewTeam`)
     const teamJson = await teamRaw.json();
     const team = teamJson.team
+    const CarouselImagesRaw = await fetch(`${process.env.BASE_URL}/api/getCarousel`)
+    const CarouselImages = await CarouselImagesRaw.json()
     return{
       props:{
         TilesData:responseJson.data,
         status,
         userData,
         userDataStatus,
-        team
+        team,
+        CarouselImages
       }
     }
 }
