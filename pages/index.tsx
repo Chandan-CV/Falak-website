@@ -7,9 +7,7 @@ import Navbar from '../components/Navbar';
 import Placard from '../components/Placard';
 import Tile from '../components/Tile';
 import styles from '../styles/Home.module.css'
-import Logo from '../assets/Logo.png';
 import { OurTeam } from '../types';
-import Image from 'next/image';
 import Head from 'next/head';
 import useWindowDimensions from '../components/useWindowDimensions';
 import Footer from '../components/Footer';
