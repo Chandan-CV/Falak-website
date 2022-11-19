@@ -7,16 +7,10 @@ import Navbar from '../components/Navbar';
 import Placard from '../components/Placard';
 import Tile from '../components/Tile';
 import styles from '../styles/Home.module.css'
-import Logo from '../assets/Logo.png';
 import { OurTeam } from '../types';
-import Image from 'next/image';
 import Head from 'next/head';
 import useWindowDimensions from '../components/useWindowDimensions';
 import Footer from '../components/Footer';
-import bandnobg from '../assets/bandnobg.jpg'
-import falaknobg from '../assets/falaknobg.jpg'
-import singernobg from '../assets/singernobg.jpg'
-import standupnobg from '../assets/standupnobg.jpg'
 import {Carousel} from 'react-responsive-carousel'
 import 'react-responsive-carousel/lib/styles/carousel.min.css'
 interface Props{
@@ -34,7 +28,7 @@ export default function Home({TilesData,status,userData, userDataStatus, team,Ca
   const theme = createTheme({
     palette:{
       primary:{
-        main:"#6C72D9",
+        main:"#B7482D",
         
       },
       secondary:{
@@ -52,7 +46,7 @@ export default function Home({TilesData,status,userData, userDataStatus, team,Ca
   <div className={styles.container}>
    <Navbar/>
     <div className='flex flex-row'>
-      <Carousel autoPlay showArrows={false} interval={3000} infiniteLoop={true} showIndicators={false} showStatus={false} showThumbs={false} stopOnHover={false}>
+      <Carousel autoPlay showArrows={false} interval={5000} infiniteLoop={true} showIndicators={false} showStatus={false} showThumbs={false} stopOnHover={false}>
       {
         CarouselImages.map((e)=>{
           return <div key={e.length/10}>
@@ -63,6 +57,9 @@ export default function Home({TilesData,status,userData, userDataStatus, team,Ca
       }
       </Carousel>
     </div>
+      <div className='flex w-full justify-center items-center mt-20 text-center'>
+      <p className='text-[50px] text-[#EEE3DA] font-Amita'>25th - 27th November!</p>
+      </div>
     
     {
       session?
@@ -103,7 +100,7 @@ Falak is a celebration of a sense of belonging, a palace where participants from
     </div>
     <div className={styles.events}  id="eventstag">
       <p className='text-center text-5xl font-bold text-white mt-10'>Events</p>
-      <div className={styles.underline2}/>
+      <div className={styles.underline3}/>
       <div className={styles.grid_container}>
 {
     TilesData.map((tile:any)=><Tile src={tile[4]} name={tile[0]} date={tile[2]} description={tile[1]} pass={tile[3]} key={title[0]}/>

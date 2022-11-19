@@ -8,7 +8,11 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily:{
+        Amita: ['Amita', 'cursive']
+      }
+    },
   },
   plugins: [
     plugin(function ({ addUtilities }) {

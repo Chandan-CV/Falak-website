@@ -9,12 +9,11 @@ interface Props{
     name: string,
     description: string,
     date: string,
-    pass: 'None'|'Bronze'|'Silver'|'Gold'|'Platinum'|'Fashion',
+    pass: 'None'|'Bronze'|'Silver'|'Gold'|'Platinum'|'Fashion'|'Sports'|'MUN',
 }
 
 
 function Tile({src,name,description,date,pass}:Props) {
-    const [color,setColor]=useState('#CD7F32')
     const router = useRouter();
     // const routeName = name.toLocaleLowerCase().replaceAll(" ","").replaceAll("-","").replaceAll("'","").replaceAll("?","");
     
@@ -22,7 +21,7 @@ function Tile({src,name,description,date,pass}:Props) {
   
     return (
     <div className={styles.container} onClick={()=>{router.push(`/events/${routeName}`)}}>
-        <div className={(pass=='Fashion')? styles.card_fashion:(pass=='Silver')? styles.card_slv:(pass=='Gold')? styles.card_gold:(pass=='Platinum')? styles.card_plat:(pass=='Bronze')? styles.card_br:styles.card_none}>
+        <div className={(pass=='MUN')? styles.card_mun:(pass=='Sports')? styles.card_sports:(pass=='Fashion')? styles.card_fashion:(pass=='Silver')? styles.card_slv:(pass=='Gold')? styles.card_gold:(pass=='Platinum')? styles.card_plat:(pass=='Bronze')? styles.card_br:styles.card_none}>
             <div className={styles.front}>
                 <img className={'w-full h-full rounded-[31px] '} src={src}/>
                 {/* <p className={styles.frontName}>{name}</p> */}
@@ -35,7 +34,7 @@ function Tile({src,name,description,date,pass}:Props) {
                     </div>
                     {
                         pass!='None'?
-                        <div className={styles.event_Prop +" "+ ((pass=='Fashion')? styles.fashion:(pass=='Silver')? styles.slv:(pass=='Gold')? styles.gold:(pass=='Platinum')? styles.plat:styles.br)}>
+                        <div className={styles.event_Prop +" "+ ((pass=='MUN')? styles.mun:(pass=='Sports')? styles.sports:(pass=='Fashion')? styles.fashion:(pass=='Silver')? styles.slv:(pass=='Gold')? styles.gold:(pass=='Platinum')? styles.plat:styles.br)}>
                         <FontAwesomeIcon icon={faStar}/>  
                         <p className='m-2'>{pass} Event</p>
                         </div>:null

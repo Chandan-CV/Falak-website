@@ -13,10 +13,12 @@
 }
 
 .footer {
-  background: linear-gradient(to right,#3B3786,#747CE6);
+  background: linear-gradient(to right,#AB7A4A,#EEE3DA);
   flex-direction: row;
   display: flex ;
   flex-wrap: wrap;
+  padding: 20px;
+  align-items: center;
 }
 
 .footer a {
@@ -128,7 +130,7 @@
 
 
 .appbar{
-  background: linear-gradient(to right,#3B3786,#747CE6);
+  background: linear-gradient(to right,#AB7A4A,#EEE3DA);
 }
 
 
