@@ -32,7 +32,7 @@ function EventPage({data,status}:Props) {
   const { id } = router.query;
   const handleRegisterClick = ()=>{
     if(id=='modelunitednations'){
-      router.push('https://mitbmun.com/')
+      router.push('/Register/mun')
     }
     router.push(`/Register/${data.pass.toLowerCase().replace(" ","")}`)
   }
