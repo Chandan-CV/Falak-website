@@ -65,7 +65,7 @@ function EventPage({data,status,GalleryImages}:Props) {
           </div>
         { data.cashprize?
           <div className='w-full flex justify-center'>
-          <p className='text-yellow-400 text-3xl'> <FontAwesomeIcon icon={faTrophy}/> TOTAL PRIZE POOL: {data.cashprize} INR</p>
+          <p className='text-[#DEAC39] [text-shadow:_0_1px_10px_#DEAC39,_0_2px_2px_#DEAC39]  text-3xl'> <FontAwesomeIcon icon={faTrophy}/> TOTAL PRIZE POOL: {data.cashprize} INR</p>
         </div>:null
         }
         <div className='flex p-10 text-white flex-col justify-center items-center'>
