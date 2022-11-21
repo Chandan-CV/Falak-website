@@ -84,7 +84,7 @@ function EventPage({data,status,GalleryImages}:Props) {
             <Carousel autoPlay className='w-[500px]' dynamicHeight={true} showArrows={true} interval={5000} infiniteLoop={true} showIndicators={true} showStatus={true} showThumbs={false} stopOnHover={false}>
       {
         GalleryImages.map((e)=>{
-          return <div>
+          return <div key={e.length/10}>
             <img src={e} alt='' className='h-auto w-full' key={e}/>     
             </div>
         })
