@@ -19,7 +19,7 @@ function Footer() {
         </div>
         <div><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3258.900128870748!2d77.5892597406864!3d13.124881456104033!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae196682f2da33%3A0x358deab93bcf0b1f!2sMAHE-BLR!5e0!3m2!1sen!2sin!4v1668599822424!5m2!1sen!2sin" width="200"  loading="lazy"></iframe></div>
         </div>
-        <p className='text-center text-white text-xl'>Made with ♥ <Link href={'https://www.linkedin.com/in/chandan-cv-3320441b4/'}>Chandan</Link> and <Link href={'https://www.linkedin.com/in/astitva-agarwal-9554b8204/'}>Astitva</Link></p>
+        <p className='text-center text-white text-xl'>Made with ♥ <Link href={'https://www.linkedin.com/in/chandan-cv-3320441b4/'} className="text-blue-600">Chandan</Link> and <Link href={'https://www.linkedin.com/in/astitva-agarwal-9554b8204/'} className="text-blue-600">Astitva</Link></p>
         </div>
   )
 }
