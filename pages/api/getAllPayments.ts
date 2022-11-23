@@ -6,7 +6,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     const type = req.query.type;
 
     try{
-        const order = await instance.payments.all({count:60})
+        const order = await instance.payments.all({count:100})
         if(type == 'captured'){
             const data = order.items.filter((e:any)=>{
                 if(e.status=='captured')

@@ -1,3 +1,4 @@
+import { Button } from '@mui/material';
 import React from 'react'
 import QRCode from 'react-qr-code'
 import { json } from 'stream/consumers'
@@ -30,6 +31,7 @@ function MainPagePassComponent({userData, userDataStatus}:Props) {
       }
     
     </div>
+    <Button>Register now!!</Button>
       </div>
   )
 }
