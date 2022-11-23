@@ -77,7 +77,7 @@ function Index({ passData, status, userData,  }: Props) {
                 <button className={'rounded-3xl bg-[#Ec3808] m-2 text-white p-2 px-5 hover:opacity-60'} onClick={()=>{router.push('/Register/chess')}}>CHESS</button>
                 <button className={'rounded-3xl bg-[#Ec3808] m-2 text-white p-2 px-5 hover:opacity-60'} onClick={()=>{router.push('/Register/basketball')}}>BASKETBALL</button>
                 <button className={'rounded-3xl bg-[#Ec3808] m-2 text-white p-2 px-5 hover:opacity-60'} onClick={()=>{router.push('/Register/basketballgirls')}}>BASKETBALL GIRLS</button>
-                <button className={'rounded-3xl bg-[#Ec3808] m-2 text-white p-2 px-5 hover:opacity-60'} onClick={()=>{router.push('/Register/football')}}>FOOTBALL</button>
+                {/* <button className={'rounded-3xl bg-[#Ec3808] m-2 text-white p-2 px-5 hover:opacity-60'} onClick={()=>{router.push('/Register/football')}}>FOOTBALL</button> */}
                 </div>
                 </div>
                 <div>
