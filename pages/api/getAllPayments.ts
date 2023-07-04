@@ -4,15 +4,20 @@ var instance = new Razorpay({  key_id: process.env.RAZORPAY_KEY,  key_secret: pr
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
     const type = req.query.type;
+    var totalCash = 0;
+    var totalCount =0;
+
 
     try{
         const order = await instance.payments.all({count:100})
         if(type == 'captured'){
             const data = order.items.filter((e:any)=>{
                 if(e.status=='captured')
-                return e  
+                {totalCount++
+                totalCash+= e.amount
+                return e.status}
         })
-        res.send(data)
+        res.send({totalCash,totalCount,data})
         }
         res.send(order)
     }catch{
