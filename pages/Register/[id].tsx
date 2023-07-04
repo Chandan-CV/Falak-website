@@ -70,13 +70,14 @@ function Index({ passData, status, userData,  }: Props) {
                 
                     </div>
                 <p className='text-white text-center text-6xl m-8 font-semibold max-sm:text-3xl items-center justify-center'>Team Registrations</p>
+                <p className='text-white max-w-lg mb-6 text-center italic'>*All the students are required to produce their college ID card and registration form duly signed by the Principal concern without which they will not be permitted.</p>
                 <div className='grid grid-cols-3 max-sm:grid-cols-2'>
                 <button className={'rounded-3xl bg-[#89cff0] m-2  p-2 px-5 hover:opacity-60'} onClick={()=>{router.push('/Register/fashion')}}>FASHION</button>
                 <button className={'rounded-3xl bg-[#Ec3808] m-2 text-white p-2 px-5 hover:opacity-60'} onClick={()=>{router.push('/Register/tennis')}}>TENNIS</button>
                 <button className={'rounded-3xl bg-[#Ec3808] m-2 text-white p-2 px-5 hover:opacity-60'} onClick={()=>{router.push('/Register/chess')}}>CHESS</button>
                 <button className={'rounded-3xl bg-[#Ec3808] m-2 text-white p-2 px-5 hover:opacity-60'} onClick={()=>{router.push('/Register/basketball')}}>BASKETBALL</button>
                 <button className={'rounded-3xl bg-[#Ec3808] m-2 text-white p-2 px-5 hover:opacity-60'} onClick={()=>{router.push('/Register/basketballgirls')}}>BASKETBALL GIRLS</button>
-                <button className={'rounded-3xl bg-[#Ec3808] m-2 text-white p-2 px-5 hover:opacity-60'} onClick={()=>{router.push('/Register/football')}}>FOOTBALL</button>
+                {/* <button className={'rounded-3xl bg-[#Ec3808] m-2 text-white p-2 px-5 hover:opacity-60'} onClick={()=>{router.push('/Register/football')}}>FOOTBALL</button> */}
                 </div>
                 </div>
                 <div>

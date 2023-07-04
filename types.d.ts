@@ -10,6 +10,7 @@ export interface EventPageData{
     pass: "Silver"|"Gold"|"Platinum"|"Bronze"|"Sports"|"Fashion";
     image:string;
     coordinators:CoordinatorsData[] ;
+    cashprize?: number
 }
 
 export interface CoordinatorsData{

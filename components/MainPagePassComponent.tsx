@@ -1,4 +1,8 @@
 import { Button } from '@mui/material';
+<<<<<<< HEAD
+=======
+import { useRouter } from 'next/router';
+>>>>>>> main
 import React from 'react'
 import QRCode from 'react-qr-code'
 import { json } from 'stream/consumers'
@@ -8,7 +12,7 @@ interface Props{
   userDataStatus:number;
 }
 function MainPagePassComponent({userData, userDataStatus}:Props) {
- 
+ const router =useRouter();
   const qrCodeData = {
     name:userData.name,
     pass: userData.pass,
@@ -30,8 +34,18 @@ function MainPagePassComponent({userData, userDataStatus}:Props) {
         />:<p className='text-white'>no pass yet</p>
       }
     
+<<<<<<< HEAD
     </div>
     <Button>Register now!!</Button>
+=======
+    </div> 
+    {
+      userDataStatus==200?
+      <div className='m-5 '>
+    <Button variant='outlined' color='secondary' onClick={()=>{router.push('https://linktr.ee/falak.mitblr')}}>Register to events now!</Button>
+    </div>:null
+    }
+>>>>>>> main
       </div>
   )
 }
